@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Deck Skeleton</title>
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	
+	<!-- Replace path with correct path to deck.core.css. -->
+	<link rel="stylesheet" href="deck/core/deck.core.css" type="text/css">
+	
+	<!-- Any other extension CSS files go here. -->
+	<link rel="stylesheet" href="deck/extensions/status/deck.status.css" type="text/css">
+	<link rel="stylesheet" href="deck/extensions/menu/deck.menu.css" type="text/css">
+	<link rel="stylesheet" href="deck/extensions/scale/deck.scale.css" type="text/css">
+	<link rel="stylesheet" href="deck/extensions/navigation/deck.navigation.css" type="text/css">
+	
+	<link rel="stylesheet" href="deck/themes/transition/vertical-slide.css" type="text/css">
+	<link rel="stylesheet" href="deck/themes/style/swiss.css" type="text/css">
+
+	
+	<!-- Replace path with correct path to Modernizr file. -->
+	<script src="js/modernizr.custom.js"></script>
+</head>
+<body class="deck-container">
+
+<!-- Create any number of elements with class slide within the container -->
+<section class="slide">
+	<h1>HTML 5 Workshop</h1>
+	<h3>@TryCATCH</h3>
+	<!-- Slide content HTML goes here! -->
+</section>
+<section class="slide">
+	<h2>What is HTML 5?</h2>
+	<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dGs5aE5RSWN0cEQ4d3IxM1RDXzM5Ync6MQ" width="760" height="662" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+	<!-- Slide content HTML goes here! -->
+</section>
+<section class="slide">
+	<h2>Who are we?</h2>
+	<!-- Slide content HTML goes here! -->
+</section>
+<section class="slide">
+	<h2>What is HTML?</h2>
+	<!-- Slide content HTML goes here! -->
+</section>
+
+	
+<!-- Other extension HTML snippets go here, at the bottom of the deck container. -->
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<!-- Update these paths to point to the correct files. -->
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="deck/core/deck.core.js"></script>
+
+<!-- Add any other extension JS files here -->
+<script src="deck/extensions/menu/deck.menu.js"></script>
+<script src="deck/extensions/navigation/deck.navigation.js"></script>
+<script src="deck/extensions/scale/deck.scale.js"></script>
+<script src="deck/extensions/status/deck.status.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>
