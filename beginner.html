@@ -2,10 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Deck Skeleton</title>
+	<title>Html 5 Workshop</title>
 	<meta name="viewport" content="width=1024, user-scalable=no">
 	
-	<!-- Replace path with correct path to deck.core.css. -->
 	<link rel="stylesheet" href="deck/core/deck.core.css" type="text/css">
 	
 	<!-- Any other extension CSS files go here. -->
@@ -13,9 +12,30 @@
 	<link rel="stylesheet" href="deck/extensions/menu/deck.menu.css" type="text/css">
 	<link rel="stylesheet" href="deck/extensions/scale/deck.scale.css" type="text/css">
 	<link rel="stylesheet" href="deck/extensions/navigation/deck.navigation.css" type="text/css">
-	
+    <!-- Remote Control of all the slides -->
+    <link rel="stylesheet" type="text/css" href="http://deckjs-remote.no.de/deckjs-remote.css" />
+    
+    <!-- Themes and transitions -->
 	<link rel="stylesheet" href="deck/themes/transition/vertical-slide.css" type="text/css">
-	<link rel="stylesheet" href="deck/themes/style/swiss.css" type="text/css">
+	<link rel="stylesheet" href="deck/themes/style/web-2.0.css" type="text/css">
+
+    <style>
+        .graphicBox
+        {
+            float:left;
+            display:block;
+            list-style:none;
+            margin-right:10px !important;
+        }
+        .graphicList li.graphicBox
+        {   
+            width:100px;
+        }
+        .graphicList
+        {
+            margin:0;
+        }
+    </style>
 
 	
 	<!-- Replace path with correct path to Modernizr file. -->
@@ -30,19 +50,177 @@
 	<!-- Slide content HTML goes here! -->
 </section>
 <section class="slide">
-	<h2>What is HTML 5?</h2>
-	<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dGs5aE5RSWN0cEQ4d3IxM1RDXzM5Ync6MQ" width="760" height="662" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-	<!-- Slide content HTML goes here! -->
+    <!-- Form asking about current level of knowledge -->
+	<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dGs5aE5RSWN0cEQ4d3IxM1RDXzM5Ync6MQ" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>	
 </section>
 <section class="slide">
 	<h2>Who are we?</h2>
-	<!-- Slide content HTML goes here! -->
+    <div style="float:left;width:300px;margin-right:20px;">
+    <img src="http://placehold.it/300/aaa" />
+    <h3>Nadya Calderon</h3>
+    <p>{Write Up}</p>
+    </div>
+    <div style="float:left;width:300px;margin-right:10px;">
+    <img src="http://placehold.it/300/aaa" />
+    <h3>Shan Naziripour</h3>
+    <p>Deveopler at Vancouver Startup working on social networking and educational technologies</p>
+    </div>
+    <div style="float:left;width:100px;">
+    <h4>We're here to help!</h4>
+    <p>Ask us anything and we'll try to help</p>
+    <img src="http://placehold.it/100/400/aaa" />
+    </div>
+</section>
+<section class="slide">
+    <h2>Why Html 5?</h2>
+    <p>Because it's amazing and the web is fast moving</p>
+    <p>Here are some cool examples of what Html 5 can do</p>
+    <!-- TODO: add examples from http://www.cssdesignawards.com/css-web-design-award-nominees.php -->
+    <ul class="graphicList">
+    <li class="slide graphicBox" ><img src="http://placehold.it/100/aaa" /></li>
+    <li class="slide graphicBox" ><img src="http://placehold.it/100/aaa" /></li>
+    <li class="slide graphicBox" ><img src="http://placehold.it/100/aaa" /></li>
+    <li class="slide graphicBox" ><img src="http://placehold.it/100/aaa" /></li>
+    <li class="slide graphicBox" ><img src="http://placehold.it/100/aaa" /></li>
+    </ul>
 </section>
 <section class="slide">
 	<h2>What is HTML?</h2>
+    <p>Html stands for .. </p>
+    <h3 class="slide">HyperText Markup Language</h3>
+    <div class="slide">
+    <p><b>What does that mean?</b> It's basically a language to describe text</p>
+    <p><b>For example</b> To descbibe something is a paragraph with Html you would wrap it in a beggining p and ending p tag. Like so.. </p>
+    </div>
+    <pre class="slide"><code>&nlt;p&ngt;
+    This is a paragraph
+&nlt;p&ngt;</code></pre>
 	<!-- Slide content HTML goes here! -->
 </section>
+<section class="slide">
+    <h2>What makes up a HTML page?</h2>
+    <div style="float:right;width:200px;"><img src="http://placehold.it/200/500/aaa" /><b>Anatomy of an HTML Web Page</b></div>
+    <pre><code>&nlt;html&ngt;
+    &nlt;head&ngt;
+        &nlt;title&ngt;Title of the Document&nlt;/title&ngt;
+    &nlt;/head&ngt;
+    &nlt;body&ngt;
+        Contents of the Document
+    &nlt;/body&ngt;
+&nlt;/html&ngt;</code></pre>
+    <ul>
+    <li class="slide">
+    <b> &nlt;html&ngt; </b> HTML Tag
+    </li>
+    <li class="slide">
+    <b> &nlt;head&ngt; </b> Describes the document
+    </li>
+    <li class="slide">
+    <b> &nlt;body&ngt; </b> Contents of the document
+    </li>
+    <li class="slide">
+    and many many more!
+    </li>
+    </ul>
+    <div class="slide">There are so many different html tags? What do I do?</div>
+    <div class="slide">
+    <b>Don't Worry!</b> Understand the <i>basic concepts</i> and you can use reference sites to get all the different html tags.
+    </div>
+</section>
+<section class="slide">
+    <h2>Let's Start!</h2>
+    <p><img src="http://farm3.staticflickr.com/2722/4267017325_e3356aabf2_n.jpg" height="100px" style="float:left;margin-right:10px;"/> Your mission, should you accept it is - to make a page that says "Hello World!". <i>Have fun!</i></p>
+    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/jAGUJ/embedded/html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+</section>
+<section class="slide">
+    <h2>Done?</h2>
+    <p>Does it look something like this?</p>
+    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/4GW92/1/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    <small>If not don't worry!</small>
+</section>
+<section class="slide">
+    <h2>Let's go over Some Basic Tags</h2>
+    <ul>
+    <li class="slide"><b>h1,h2,h3,..</b> Headings on different scales. h1 representing the top heading and h2 representing lower headings.</li>
+    <li class="slide"><b>b</b> Want some text bold? Bold it with b.</li>
+    <li class="slide"><b>p</b> Paragraph. Text that should be grouped in a paragraph</li>
+    <li class="slide"><b>blockquote</b> Quoted text.</li>
+    <li class="slide"><b>article</b> Defines an article</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Let's apply ourselves!</h2>
+    <p>Markup the article below on the left in Html</p>
+    <div>
+    <div style="font-size:2.5em">Big News iPad 6!</div>
+    <div style="font-size:1.5em">"The newest of new!</div>
+    <div>Announced by Bill Gates at New York</div>
+    <br/>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed magna justo. Pellentesque feugiat ante nec quam pulvinar ut auctor enim semper. Vivamus erat nibh, cursus at vestibulum eget, dictum eget odio. Nunc ac purus massa. Vestibulum adipiscing hendrerit tellus, quis tincidunt odio eleifend sed.</p>
+    <p>"Donec sagittis ultricies est in convallis. Mauris magna metus, tincidunt a faucibus sed, malesuada eget diam." said George Bush.</p>
+</div>    
+</section>
+<section class="slide">
+<h2>Grats!</h2>
+<p>Does it look something like this?</p>
 
+</section>
+<section class="slide">
+<h2>Now to make the Web Beautiful</h2>
+<h3 class="slide">What is CSS?</h3>
+<p class="slide">CSS stands for ..</p>
+<h4 class="slide">Cascading Style Sheet</h4>
+<div class="slide">
+What does that mean?
+</div>
+</section>
+<section class="slide">
+<h2>The Power of CSS</h2>
+<!--Demo http://www.csszengarden.com/ -->
+<p><b>One Website</b> - so many different ways to show the same content</p>
+<ul class="graphicList">
+<li class=" graphicBox"><iframe src="http://www.csszengarden.com" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe></li>
+<li class="graphicBox"><iframe src="http://www.csszengarden.com/?cssfile=/213/213.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe></li>
+<li class="graphicBox"><iframe src="http://www.csszengarden.com/?cssfile=/212/212.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe></li>
+<li class="graphicBox"><iframe src="http://www.csszengarden.com/?cssfile=/211/211.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe></li>
+</ul>
+</section>
+<section class="slide">
+<h2>Selecting the Markup</h2>
+<p>Go through how to select with CSS</p>
+</section>
+<section class="slide">
+<h2>Quiz Time</h2>
+<p>Quiz how to use css selectors on different parts of the markup</p>
+<ol>
+<li>How do you select .. </li>
+</ol>
+</section>
+<section class="slide">
+<h2>Applying the Style</h2>
+<p>Go throught the different attributes that can be used in css</p>
+</section>
+<section class="slide">
+<h2>Let's style the Article!</h2>
+<p>Have the students go through styling their article</p>
+</section>
+<section class="slide">
+<h2>There's more ... CSS3</h2>
+<p>Talk about new CSS3 atributes</p>
+</section>
+<section class="slide">
+<h2>Let's Pimp that Article!</h2>
+<p>Have them add a shadow, reflection and pulsating animation on the article</p>
+</section>
+<section class="slide">
+<h2>Grats</h2>
+
+</section>
+<section class="slide">
+    <!-- Questionaire for the current level of knowledge -->
+    <iframe src="https://docs.google.com/spreadsheet/viewform?formkey=dDdtblhjRUNhUGsySWRsbjVfc3hlckE6MA#gid=0" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+</section>
+    
 	
 <!-- Other extension HTML snippets go here, at the bottom of the deck container. -->
 <p class="deck-status">
@@ -53,6 +231,36 @@
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
 <a href="#" class="deck-next-link" title="Next">&#8594;</a>
 
+<div class="deck-remote-join-message">
+    <p>There is a session available. Would you like to join?</p>
+    <p class="deck-remote-links">
+        <a href="#" class="deck-remote-ignore-link">Ignore</a>
+        |
+        <a href="#" class="deck-remote-join-link">Join</a>
+    </p>
+</div>
+
+<div class="deck-remote-leave-message">
+    <p>The session has ended.</p>
+    <p class="deck-remote-links">
+        <a href="#" class="deck-remote-close-link">Close</a>
+    </p>
+</div>
+
+<div class="deck-remote-master-message">
+    <p>Do you have the key?</p>
+    <p class="deck-remote-master-feedback"></p>
+    <form class="deck-remote-master-form" action="">
+        <p>
+            <input class="deck-remote-password" type="password" />
+        </p>
+        <p class="deck-remote-links">
+            <button type="submit">Start Session</button>
+        </p>
+    </form> 
+</div>    
+<!-- End of Other extension HTML snippets go here, at the bottom of the deck container. -->
+
 <!-- Update these paths to point to the correct files. -->
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="deck/core/deck.core.js"></script>
@@ -62,11 +270,18 @@
 <script src="deck/extensions/navigation/deck.navigation.js"></script>
 <script src="deck/extensions/scale/deck.scale.js"></script>
 <script src="deck/extensions/status/deck.status.js"></script>
+<!-- Remote -->
+<script src="http://deckjs-remote.no.de/deckjs-remote.js"></script>
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
 	$(function() {
 		$.deck('.slide');
+        $.deck('remote', {
+            //server: 'http://deckjs-remote.no.de',
+            //port: 80,
+            //key: [md5 hash]
+        });
 	});
 </script>
 </body>

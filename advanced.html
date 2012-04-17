@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>Html 5 Workshop - Advanced</title>
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	
+	<link rel="stylesheet" href="deck/core/deck.core.css" type="text/css">
+	
+	<!-- Any other extension CSS files go here. -->
+	<link rel="stylesheet" href="deck/extensions/status/deck.status.css" type="text/css">
+	<link rel="stylesheet" href="deck/extensions/menu/deck.menu.css" type="text/css">
+	<link rel="stylesheet" href="deck/extensions/scale/deck.scale.css" type="text/css">
+	<link rel="stylesheet" href="deck/extensions/navigation/deck.navigation.css" type="text/css">
+    <!-- Remote Control of all the slides -->
+    <link rel="stylesheet" type="text/css" href="http://deckjs-remote.no.de/deckjs-remote.css" />
+    
+    <!-- Themes and transitions -->
+	<link rel="stylesheet" href="deck/themes/transition/vertical-slide.css" type="text/css">
+	<link rel="stylesheet" href="deck/themes/style/web-2.0.css" type="text/css">
+
+    <style>
+    
+    </style>
+
+	
+	<!-- Replace path with correct path to Modernizr file. -->
+	<script src="js/modernizr.custom.js"></script>
+</head>
+<body class="deck-container">
+
+<!-- Create any number of elements with class slide within the container -->
+<section class="slide">
+	<h1>HTML 5 Workshop (Advanced)</h1>
+	<h2>@TryCATCH</h2>
+	<!-- Slide content HTML goes here! -->
+</section>
+	
+<!-- Other extension HTML snippets go here, at the bottom of the deck container. -->
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<div class="deck-remote-join-message">
+    <p>There is a session available. Would you like to join?</p>
+    <p class="deck-remote-links">
+        <a href="#" class="deck-remote-ignore-link">Ignore</a>
+        |
+        <a href="#" class="deck-remote-join-link">Join</a>
+    </p>
+</div>
+
+<div class="deck-remote-leave-message">
+    <p>The session has ended.</p>
+    <p class="deck-remote-links">
+        <a href="#" class="deck-remote-close-link">Close</a>
+    </p>
+</div>
+
+<div class="deck-remote-master-message">
+    <p>Do you have the key?</p>
+    <p class="deck-remote-master-feedback"></p>
+    <form class="deck-remote-master-form" action="">
+        <p>
+            <input class="deck-remote-password" type="password" />
+        </p>
+        <p class="deck-remote-links">
+            <button type="submit">Start Session</button>
+        </p>
+    </form> 
+</div>    
+<!-- End of Other extension HTML snippets go here, at the bottom of the deck container. -->
+
+<!-- Update these paths to point to the correct files. -->
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="deck/core/deck.core.js"></script>
+
+<!-- Add any other extension JS files here -->
+<script src="deck/extensions/menu/deck.menu.js"></script>
+<script src="deck/extensions/navigation/deck.navigation.js"></script>
+<script src="deck/extensions/scale/deck.scale.js"></script>
+<script src="deck/extensions/status/deck.status.js"></script>
+<!-- Remote -->
+<script src="http://deckjs-remote.no.de/deckjs-remote.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+	$(function() {
+		$.deck('.slide');
+        $.deck('remote', {
+            //server: 'http://deckjs-remote.no.de',
+            //port: 80,
+            //key: [md5 hash]
+        });
+	});
+</script>
+</body>
+</html>
