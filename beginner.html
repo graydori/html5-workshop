@@ -12,25 +12,37 @@
 	<link rel="stylesheet" href="deck/extensions/menu/deck.menu.css" type="text/css">
 	<link rel="stylesheet" href="deck/extensions/scale/deck.scale.css" type="text/css">
 	<link rel="stylesheet" href="deck/extensions/navigation/deck.navigation.css" type="text/css">
+    <link rel="stylesheet" href="deck/extensions/codemirror/deck.codemirror.css">
+    <link rel="stylesheet" href="deck/extensions/codemirror/themes/default.css">
+    
     <!-- Remote Control of all the slides -->
     <link rel="stylesheet" type="text/css" href="http://deckjs-remote.no.de/deckjs-remote.css" />
     
     <!-- Themes and transitions -->
 	<link rel="stylesheet" href="deck/themes/transition/vertical-slide.css" type="text/css">
+    <!--
 	<link rel="stylesheet" href="deck/themes/style/web-2.0.css" type="text/css">
-
+    -->
     <style>
+        body {
+            background: url(img/trycatch_bg.jpg) fixed center #cddeb4;
+        }
+        section {
+            background:rgba(100%,100%,100%,0.2);
+        }
         .graphicBox
         {
             float:left;
             display:block;
             list-style:none;
             margin-right:10px !important;
-        }
+        } 
+        /*
         .graphicList li.graphicBox
         {   
-            width:100px;
-        }
+            width:300px;
+        } 
+        */
         .graphicList
         {
             margin:0;
@@ -73,15 +85,15 @@
 </section>
 <section class="slide">
     <h2>Why Html 5?</h2>
-    <p>Because it's amazing and the web is fast moving</p>
-    <p>Here are some cool examples of what Html 5 can do</p>
+    <p>Some inspiring examples of what Html 5 Can Do!</p>
     <!-- TODO: add examples from http://www.cssdesignawards.com/css-web-design-award-nominees.php -->
     <ul class="graphicList">
-    <li class="slide graphicBox" ><img src="http://placehold.it/100/aaa" /></li>
-    <li class="slide graphicBox" ><img src="http://placehold.it/100/aaa" /></li>
-    <li class="slide graphicBox" ><img src="http://placehold.it/100/aaa" /></li>
-    <li class="slide graphicBox" ><img src="http://placehold.it/100/aaa" /></li>
-    <li class="slide graphicBox" ><img src="http://placehold.it/100/aaa" /></li>
+    <li class="slide graphicBox" ><img src="http://placehold.it/200/aaa" /></li>
+    <li class="slide graphicBox" ><img src="http://placehold.it/200/aaa" /></li>
+    <li class="slide graphicBox" ><img src="http://placehold.it/200/aaa" /></li>
+    <li class="slide graphicBox" ><img src="http://placehold.it/200/aaa" /></li>
+    <li class="slide graphicBox" ><img src="http://placehold.it/200/aaa" /></li>
+    <li class="slide graphicBox" ><img src="http://placehold.it/200/aaa" /></li>
     </ul>
 </section>
 <section class="slide">
@@ -89,17 +101,22 @@
     <p>Html stands for .. </p>
     <h3 class="slide">HyperText Markup Language</h3>
     <div class="slide">
-    <p><b>What does that mean?</b> It's basically a language to describe text</p>
-    <p><b>For example</b> To descbibe something is a paragraph with Html you would wrap it in a beggining p and ending p tag. Like so.. </p>
+    <p><b>What does that mean?</b> It's basically a language to describe (or markup) text.</p>
+    <p><b>For example</b> To descbibe something is a paragraph with Html you would wrap it in a beginning &nlt;p&ngt; and ending &nlt;/p&ngt;. Like so.. </p>
     </div>
     <pre class="slide"><code>&nlt;p&ngt;
     This is a paragraph
 &nlt;p&ngt;</code></pre>
+    <div class="slide">
+    <p>Html consists of Html elements denoted with angle backets called <u>tags</u></p>
+    <p><u>&nlt;p&ngt;</u> is a tag</p>
+    </div>
 	<!-- Slide content HTML goes here! -->
 </section>
 <section class="slide">
     <h2>What makes up a HTML page?</h2>
-    <div style="float:right;width:200px;"><img src="http://placehold.it/200/500/aaa" /><b>Anatomy of an HTML Web Page</b></div>
+    <table width="100%" border="0">
+    <tr><td>
     <pre><code>&nlt;html&ngt;
     &nlt;head&ngt;
         &nlt;title&ngt;Title of the Document&nlt;/title&ngt;
@@ -107,39 +124,75 @@
     &nlt;body&ngt;
         Contents of the Document
     &nlt;/body&ngt;
-&nlt;/html&ngt;</code></pre>
+&nlt;/html&ngt;</code></pre></td><td width="210" align="right"><img src="http://farm4.staticflickr.com/3493/3913797474_d2a3c822c1_b.jpg" width="160" /><i>Anatomy of an HTML Web Page</i></td></tr></table>
     <ul>
     <li class="slide">
-    <b> &nlt;html&ngt; </b> HTML Tag
+    <b> &nlt;html&ngt; </b> HTML tags tell the browser where the HTML starts and stops. Every HTML file must begin and end with the html tags.
     </li>
     <li class="slide">
-    <b> &nlt;head&ngt; </b> Describes the document
+    <b> &nlt;head&ngt; </b> Describes the HTML page. This element will contain extra information like the title and description of the document
     </li>
     <li class="slide">
-    <b> &nlt;body&ngt; </b> Contents of the document
+    <b> &nlt;body&ngt; </b> Contents of the HTML page. This element wil contain the actual content of the document.
     </li>
     <li class="slide">
     and many many more!
     </li>
     </ul>
-    <div class="slide">There are so many different html tags? What do I do?</div>
-    <div class="slide">
-    <b>Don't Worry!</b> Understand the <i>basic concepts</i> and you can use reference sites to get all the different html tags.
-    </div>
 </section>
 <section class="slide">
-    <h2>Let's Start!</h2>
-    <p><img src="http://farm3.staticflickr.com/2722/4267017325_e3356aabf2_n.jpg" height="100px" style="float:left;margin-right:10px;"/> Your mission, should you accept it is - to make a page that says "Hello World!". <i>Have fun!</i></p>
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/jAGUJ/embedded/html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    <img src="http://farm1.staticflickr.com/35/106623809_d7b8f30e99_b.jpg" height="310px" style="float:right;margin:20px" />
+    <h2>Intimidated?</h2>
+    <p>There are so many differnt HTML Tags!</p>
+    <div class="slide">
+    <h3>Don't Worry!</h3>
+    <p> Understand the <i>basic concepts</i> and you can use reference sites to find all the different HTML tags.</p>
+    </div>
+    <ol>
+        <li class="slide">Markup is to describe the content. <b>Be META</b></li>
+        <li class="slide">Lookup reference of tags/attributes</li>
+        <li class="slide">Make sure your markup is valid. Complete html tags with an appropriate end tag</li>
+    </ol>
 </section>
+<section class="slide">
+    <img src="http://farm3.staticflickr.com/2722/4267017325_e3356aabf2_n.jpg" height="170px" style="float:right;margin:10px;"/>
+    <h2>Let's Start!</h2>
+    <p> Your mission, should you accept it is - to make a page that says "Hello World!". <i>Have fun!</i></p>
+    <p>Fill in the area bellow</p>
+    <div style="clear:both" ></div>
+  <textarea cols="130" rows="30" id="helloworld" class="code" mode="text/html" style="display: none;">
+  
+  
+  
+  
+  
+  </textarea>
+
+    </section>
 <section class="slide">
     <h2>Done?</h2>
     <p>Does it look something like this?</p>
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/4GW92/1/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    <textarea cols="130" rows="30" id="helloworld2" readOnly="true" class="code" mode="text/html" style="display: none;">
+  <html>
+  <body>
+  Hello World
+  </body>
+  </html>
+  </textarea>
+    <div style="border:1px solid #aaa;background:#fff;">
+        <iframe>
+        <!DOCTYPE html>
+        <html>
+        <body>
+            <h2>Hello World!</h2>
+        </body>
+        </html>
+        </iframe>
+    </div>
     <small>If not don't worry!</small>
 </section>
 <section class="slide">
-    <h2>Let's go over Some Basic Tags</h2>
+    <h2>Let's go over Some Basic HTML Tags</h2>
     <ul>
     <li class="slide"><b>h1,h2,h3,..</b> Headings on different scales. h1 representing the top heading and h2 representing lower headings.</li>
     <li class="slide"><b>b</b> Want some text bold? Bold it with b.</li>
@@ -150,20 +203,71 @@
 </section>
 <section class="slide">
     <h2>Let's apply ourselves!</h2>
-    <p>Markup the article below on the left in Html</p>
+    <p>Markup the article on the left below in HTML</p>
+    <table width="100%">
+    <tr>
+    <td width="48%">
     <div>
     <div style="font-size:2.5em">Big News iPad 6!</div>
-    <div style="font-size:1.5em">"The newest of new!</div>
+    <div style="font-size:1.5em">The newest of new!</div>
     <div>Announced by Bill Gates at New York</div>
     <br/>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed magna justo. Pellentesque feugiat ante nec quam pulvinar ut auctor enim semper. Vivamus erat nibh, cursus at vestibulum eget, dictum eget odio. Nunc ac purus massa. Vestibulum adipiscing hendrerit tellus, quis tincidunt odio eleifend sed.</p>
     <p>"Donec sagittis ultricies est in convallis. Mauris magna metus, tincidunt a faucibus sed, malesuada eget diam." said George Bush.</p>
-</div>    
+</div>
+</td>
+<td width="2%"></td>
+<td width="50%">
+<textarea cols="130" rows="30" id="article1" class="code" mode="text/html" style="display: none;">
+  
+  
+  
+  
+  
+  </textarea>
+</td>
+<td>
+
+</td>
+</tr>
+</table>
 </section>
 <section class="slide">
 <h2>Grats!</h2>
 <p>Does it look something like this?</p>
-
+<textarea cols="130" rows="30" id="article2" readOnly="true" class="code" mode="text/html" style="display: none;">
+  <html>
+        <head>
+            <title>Big News iPad 6!</title>
+        </head>
+      <body>
+        <article>
+            <h1>Big News iPad 6!</h1>
+            <h2>The newest of new!</h2>
+            <b>Announced by Bill Gates at New York</b>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed magna justo. Pellentesque feugiat ante nec quam pulvinar ut auctor enim semper. Vivamus erat nibh, cursus at vestibulum eget, dictum eget odio. Nunc ac purus massa. Vestibulum adipiscing hendrerit tellus, quis tincidunt odio eleifend sed.</p>
+            <blockquote>"Donec sagittis ultricies est in convallis. Mauris magna metus, tincidunt a faucibus sed, malesuada eget diam." said George Bush.</blockquote>
+        </article>
+      </body>
+  </html>
+  </textarea>
+    <div style="border:1px solid #aaa;background:#fff;">
+        <iframe style="margin:0">
+        <!DOCTYPE html>
+        <html>
+  <body>
+  
+  <article>
+  <h1>Big News iPad 6!</h1>
+  <h2>The newest of new!</h2>
+  <b>Announced by Bill Gates at New York</b>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed magna justo. Pellentesque feugiat ante nec quam pulvinar ut auctor enim semper. Vivamus erat nibh, cursus at vestibulum eget, dictum eget odio. Nunc ac purus massa. Vestibulum adipiscing hendrerit tellus, quis tincidunt odio eleifend sed.</p>
+    <blockquote>"Donec sagittis ultricies est in convallis. Mauris magna metus, tincidunt a faucibus sed, malesuada eget diam." said George Bush.</blockquote>
+  </article>
+  </body>
+  </html>
+        </iframe>
+    </div>
 </section>
 <section class="slide">
 <h2>Now to make the Web Beautiful</h2>
@@ -173,32 +277,61 @@
 <div class="slide">
 What does that mean?
 </div>
+<ul>
+<li class="slide"><b>Style Sheet </b> Document to control the look an feel of HTML</li>
+<li class="slide"><b>Cascading</b> Supports several levels of stylesheets that may override/join with other style sheets</li>
+</ul>
+<div class="slide">
+CSS is powerful. It doesn't care about the content or workings of the html but a focus on the look and feel of the HTML.<br/>
+This is a powerful concept, <b><u>Seperation of Concerns</u></b>.
+</div>
 </section>
 <section class="slide">
 <h2>The Power of CSS</h2>
 <!--Demo http://www.csszengarden.com/ -->
-<p><b>One Website</b> - so many different ways to show the same content</p>
-<ul class="graphicList">
-<li class=" graphicBox"><iframe src="http://www.csszengarden.com" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe></li>
-<li class="graphicBox"><iframe src="http://www.csszengarden.com/?cssfile=/213/213.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe></li>
-<li class="graphicBox"><iframe src="http://www.csszengarden.com/?cssfile=/212/212.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe></li>
-<li class="graphicBox"><iframe src="http://www.csszengarden.com/?cssfile=/211/211.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe></li>
-</ul>
+<p><b><u>One HTML Page</u></b> - so many different ways to show the same content using differnt CSS</p>
+<iframe width="100%" height="150px" src="http://www.csszengarden.com" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
+<iframe width="100%" height="150px"  src="http://www.csszengarden.com/?cssfile=/213/213.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
+<iframe width="100%" height="150px"  src="http://www.csszengarden.com/?cssfile=/212/212.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
+<iframe width="100%" height="150px"  src="http://www.csszengarden.com/?cssfile=/211/211.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
+
 </section>
 <section class="slide">
 <h2>Selecting the Markup</h2>
-<p>Go through how to select with CSS</p>
+<p>Create CSS Selectors to select a specific HTML element.</p>
+<ul>
+<li>Select a tag<li>
+<li>Select a child with a certain parent</li>
+<li>Select by id</li>
+<li>Select by className</li>
+<li>Multiple select statements</li>
+</ul>
 </section>
 <section class="slide">
 <h2>Quiz Time</h2>
-<p>Quiz how to use css selectors on different parts of the markup</p>
+<p>Quiz how to use CSS selectors on different parts of the HTML Markup</p>
+<table>
+<tr>
+<td width="48%">
+<h3>How do you select?</h3>
 <ol>
-<li>How do you select .. </li>
+<li>All Paragraphs?</li>
+<li>All Paragraphs in an article?</li>
+<li>Both Top Headers and Paragraphs</li>
 </ol>
+</td>
+<td width="2%"></td>
+<td>
+The article
+</td>
+</tr>
+</table>
 </section>
 <section class="slide">
 <h2>Applying the Style</h2>
 <p>Go throught the different attributes that can be used in css</p>
+<ol>
+</ol>
 </section>
 <section class="slide">
 <h2>Let's style the Article!</h2>
@@ -272,6 +405,23 @@ What does that mean?
 <script src="deck/extensions/status/deck.status.js"></script>
 <!-- Remote -->
 <script src="http://deckjs-remote.no.de/deckjs-remote.js"></script>
+
+<!-- Code Mirror -->
+<!-- Base codemiror code -->
+<script src="deck/extensions/codemirror/codemirror.js"></script>
+
+<!-- Syntax highlighting Modes -->
+
+<!-- javascript -->
+<script src="deck/extensions/codemirror/mode/javascript/javascript.js"></script>
+
+<!-- html mode (note html mode requires xml, css and javascript) -->
+<script src="deck/extensions/codemirror/mode/xml/xml.js"></script>
+<script src="deck/extensions/codemirror/mode/css/css.js"></script>
+<script src="deck/extensions/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+<!-- Plugin code -->
+<script src="deck/extensions/codemirror/deck.codemirror.js"></script>
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
