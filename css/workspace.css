@@ -1,0 +1,14 @@
+.code .label,
+#tip,
+#control
+{
+	display:none !important;
+}
+#bin
+{
+	top:0 !important;
+}
+.html .CodeMirror-scroll > div 
+{
+	margin-top:.6em;
+}
