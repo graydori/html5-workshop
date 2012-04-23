@@ -27,11 +27,22 @@
         body {
             background: url('img/trycatch_bg.jpg') fixed center #cddeb4;
         }
+		h1, h2, h3, h4
+		{
+			font-family:Arial;
+		}
+		.preview,
 		.workspace
 		{
 			background:#fff;
 			border:1px solid #aaa;
 			box-shadow:0 0 10px rgba(0%,0%,0%,0.5);
+		}
+		html body.deck-container .deck-status {
+			color:#fff;
+		}
+		html body.deck-container section b{
+			font-weight:bolder;
 		}
 		html body.deck-container section{
 			font-size:23px;
@@ -57,8 +68,6 @@
             margin:0;
         }
     </style>
-
-	
 	<!-- Replace path with correct path to Modernizr file. -->
 	<script src="js/modernizr.custom.js"></script>
 </head>
@@ -72,7 +81,7 @@
 </section>
 <section class="slide">
     <!-- Form asking about current level of knowledge -->
-<iframe src="https://docs.google.com/spreadsheet/viewform?formkey=dGs5aE5RSWN0cEQ4d3IxM1RDXzM5Ync6MQ#gid=0" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+<iframe src="https://docs.google.com/spreadsheet/viewform?formkey=dGs5aE5RSWN0cEQ4d3IxM1RDXzM5Ync6MQ#gid=0" width="100%" height="500px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
 </section>
 <section class="slide">
@@ -216,44 +225,47 @@
 <section class="slide">
     <img src="http://farm3.staticflickr.com/2722/4267017325_e3356aabf2_n.jpg" height="170px" style="float:right;margin:10px;"/>
     <h2>Let's Start!</h2>
-    <p> Your mission, should you accept it is - to make a page that says "Hello World!". <i>Have fun!</i></p>
-    <p>Fill in the area bellow</p>
+    <p> Your mission, should you accept it is - <b>To make start your own bio page that says your name.</b></p>
+    <p>Fill in the area on the left below.</p>
     <div style="clear:both" ></div>
-	<div class="workspace">
-		<iframe src="jsbin/first.html#html,live" width="100%" height="400px" ></iframe>
-		<!--<iframe src="http://jsbin.com/ocuhag/edit#html,live" width="100%" height="400px"></iframe>-->
+	<div class="workspace" src="jsbin/first.html#html,live" height="300px">
 	</div>
     </section>
 <section class="slide">
     <h2>Done?</h2>
     <p>Does it look something like this?</p>
-    <div class="workspace">
-		<iframe src="http://jsbin.com/axedaq/edit#html,live" width="100%" height="500px">
-	</div>
-    <small>If not don't worry!</small>
+	<!--
+    <div class="workspace" src="http://jsbin.com/axedaq/edit#html,live" height="500px" ></div>
+    -->
 </section>
 <section class="slide">
-    <h2>Let's go over Some Basic HTML Tags</h2>
+    <h2>Some Basic HTML Tags</h2>
+	<p>Let's go over some basic tags the help describe text</p>
     <ul>
     <li class="slide"><b>h1,h2,h3,..</b> Headings on different scales. h1 representing the top heading and h2 representing lower headings.</li>
     <li class="slide"><b>b</b> Want some text bold? Bold it with b.</li>
     <li class="slide"><b>p</b> Paragraph. Text that should be grouped in a paragraph</li>
     <li class="slide"><b>blockquote</b> Quoted text.</li>
-    <li class="slide"><b>article</b> Defines an article</li>
     </ul>
 </section>
 <section class="slide">
-    <h2>Let's apply ourselves!</h2>
-    <p>Markup the article on the left below in HTML</p>
+    <h2>Let's Apply Ourselves!</h2>
     <table width="100%">
     <tr>
     <td width="48%">
-    
+	    <p>Markup the article on the left below in HTML</p>
+		<ul>
+			<li>You Name as the top heading</li>
+			<li>Your School as the second heading</li>
+	 		<li>An Image of yourself</li>
+	 		<li>2 Paragraphs about yourself</li>
+	 		<li>Your Favourite quote</li>
+	 		<li>Links to their social sites</li>
+	</ul>
 </td>
 <td width="2%"></td>
 <td width="50%">
-	<div class="workspace">
-		<iframe src="http://jsbin.com/omukiy/edit#html,live" width="100%" height="300px"></iframe>
+	<div class="workspace" src="jsbin/first.html#html,live" height="300px">
 	</div>
 </td>
 <td>
@@ -265,9 +277,47 @@
 <section class="slide">
 <h2>Grats!</h2>
 <p>Does it look something like this?</p>
-<div class="workspace">
-	<iframe src="http://jsbin.com/axedaq/4/edit#html,live" width="100%" height="500px"></iframe>
-</div>
+<!--
+<div class="workspace" src="http://jsbin.com/axedaq/4/edit#html,live" height="500px">
+</div> -->
+</section>
+<section class="slide">
+	<h2>Linking</h2>
+	<p>How one page connects to another</p>
+	<h3>a</h3>
+	<h4>href</h4>
+	<p>How to bring images to a page<p>
+	<h3>img</h3>
+	<h4>src</h4>
+</section>
+<section class="slide">
+    <h2>Let's Add More About Ourselves!</h2>
+    <p>Markup the article on the left below in HTML</p>
+    <table width="100%">
+    <tr>
+    <td width="48%">
+		<ul>
+	 		<li>An Image of yourself</li>
+	 		<li>Links to their social sites</li>
+	</ul>
+</td>
+<td width="2%"></td>
+<td width="50%">
+	<div class="workspace" src="jsbin/first.html#html,live" height="300px">
+	</div>
+</td>
+<td>
+
+</td>
+</tr>
+</table>
+</section>
+<section class="slide">
+<h2>Grats!</h2>
+<p>Does it look something like this?</p>
+<!--
+<div class="workspace" src="http://jsbin.com/axedaq/4/edit#html,live" height="500px">
+</div> -->
 </section>
 <section class="slide">
 <h2>Now to make the Web Beautiful</h2>
@@ -283,24 +333,29 @@ What does that mean?
 </ul>
 <div class="slide">
 CSS is powerful. It doesn't care about the content or workings of the html but a focus on the look and feel of the HTML.<br/>
-This is a powerful concept, <b><u>Seperation of Concerns</u></b>.
+This is a powerful concept, <b>Separation of Concerns</b>.
 </div>
 </section>
 <section class="slide">
 <h2>The Power of CSS</h2>
 <!--Demo http://www.csszengarden.com/ -->
 <p><b><u>One HTML Page</u></b> - so many different ways to show the same content using differnt CSS</p>
-<iframe width="100%" height="150px" src="http://www.csszengarden.com" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
-<iframe width="100%" height="150px"  src="http://www.csszengarden.com/?cssfile=/213/213.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
-<iframe width="100%" height="150px"  src="http://www.csszengarden.com/?cssfile=/212/212.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
-<iframe width="100%" height="150px"  src="http://www.csszengarden.com/?cssfile=/211/211.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
+<div class="preview">
+<iframe width="100%" height="200px" src="http://www.csszengarden.com" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
+</div>
+<div class="preview">
+<iframe width="100%" height="200px"  src="http://www.csszengarden.com/?cssfile=/212/212.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
+</div>
+<div class="preview">
+<iframe width="100%" height="200px"  src="http://www.csszengarden.com/?cssfile=/211/211.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
+</div>
 
 </section>
 <section class="slide">
 <h2>Selecting the Markup</h2>
 <p>Create CSS Selectors to select a specific HTML element.</p>
 <ul>
-<li>Select a tag<li>
+<li>Select a tag</li>
 <li>Select a child with a certain parent</li>
 <li>Select by id</li>
 <li>Select by className</li>
@@ -322,23 +377,37 @@ This is a powerful concept, <b><u>Seperation of Concerns</u></b>.
 </td>
 <td width="2%"></td>
 <td>
-The article
+	<div class="workspace" src="jsbin/first.html#html,live" height="500px">
+	</div>
 </td>
 </tr>
 </table>
 </section>
 <section class="slide">
-<h2>Applying the Style</h2>
+<h2>Applying Style</h2>
+<p>After each CSS Selection you specify <b>Rules</b> for those html elements.</p>
+<p>Within some curly brakets you specify the property then the value. Like so...<p>
+</section>
+<section class="slide">
+<h3>Text Colour</h3>
 <p>Go through the different attributes that can be used in css</p>
-<ol>
-	<li></li>
-</ol>
+</section>
+<section class="slide">
+<h3>Background Colour</h3>
+<p>Go through the different attributes that can be used in css</p>
+</section>
+<section class="slide">
+<h3>Font and Font Size</h3>
+<p>Go through the different attributes that can be used in css</p>
+</section>
+<section class="slide">
+<h3>Padding and Margins</h3>
+<p>Go through the different attributes that can be used in css</p>
 </section>
 <section class="slide">
 <h2>Let's style the Article!</h2>
 <p>Have the students go through styling their article</p>
-<div class="workspace">
-	<iframe src="http://jsbin.com/axedaq/4/edit#html,live" width="100%" height="500px"></iframe>
+<div class="workspace" src="http://jsbin.com/axedaq/4/edit#html,live" height="500px">
 </div>
 </section>
 <section class="slide">
@@ -346,19 +415,42 @@ The article
 <p>Talk about new CSS3 attributes</p>
 </section>
 <section class="slide">
-<h2>Let's Pimp that Article!</h2>
-<p>Have them add a shadow, reflection and pulsating animation on the article</p>
-<div class="workplace">
-	<iframe src="http://jsbin.com/axedaq/4/edit#html,live" width="100%" height="500px"></iframe>
+<h2>Box Shadow</h2>
+<p>Talk about new CSS3 attributes</p>
+</section>
+<section class="slide">
+<h2>Text Shadow</h2>
+<p>Talk about new CSS3 attributes</p>
+</section>
+<section class="slide">
+<h2>Let's Pimp your Bio!</h2>
+<p>Have them add a shadow, reflection to your bio</p>
+<div class="workspace" src="http://jsbin.com/axedaq/4/edit#html,live" height="500px">
 </div>
 </section>
 <section class="slide">
+<h2>Animation</h2>
+<p>Talk about new CSS3 attributes</p>
+</section>
+<section class="slide">
+<h2>Hover and Transitions</h2>
+<p>Talk about new CSS3 attributes</p>
+</section>
+<section class="slide">
+<h2>Rotate</h2>
+<p>Talk about new CSS3 attributes</p>
+</section>
+<section class="slide">
+<h2>Let's bring your Bio to life!</h2>
+<p>Have them pulsating and rotating animation on the article</p>
+<div class="workspace" src="http://jsbin.com/axedaq/4/edit#html,live" height="500px"></div>
+</section>
+<section class="slide">
 <h2>Grats</h2>
-
 </section>
 <section class="slide">
     <!-- Questionaire for the current level of knowledge -->
-    <iframe src="https://docs.google.com/spreadsheet/viewform?formkey=dDdtblhjRUNhUGsySWRsbjVfc3hlckE6MA#gid=0" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    <iframe src="https://docs.google.com/spreadsheet/viewform?formkey=dDdtblhjRUNhUGsySWRsbjVfc3hlckE6MA#gid=0" width="100%" height="500px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 </section>
     
 	
@@ -433,13 +525,28 @@ The article
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
 	$(function() {
-		$(window.frames).each(function(){ if (this.stop){this.stop();}});
 		$.deck('.slide');
         $.deck('remote', {
             //server: 'http://deckjs-remote.no.de',
             //port: 80,
             //key: [md5 hash]
         });
+		$(document).bind('deck.change', function(event, from, to) {
+			if ($('section.deck-current .workspace iframe').length) {
+				$('section.deck-current .workspace iframe')[0].contentDocument.location.reload();
+			}
+			$('section.deck-next .workspace[src]').each(function(){
+				if (!$(this).find('iframe').length) {
+				var frameHeight = '400px';
+				if ($(this).attr('height')) {
+ 					frameHeight = $(this).attr('height');
+				}
+				var source = $(this).attr('src');
+				$(this).html('<iframe src="jsbin/temp.html" width="100%" height="'+frameHeight+'" ></iframe>');
+				//$(this).html('<iframe src="'+source+'" width="100%" height="'+frameHeight+'" ></iframe>');
+				}
+			});
+		});
 	});
 </script>
 </body>
