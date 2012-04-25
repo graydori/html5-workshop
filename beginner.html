@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="deck/extensions/navigation/deck.navigation.css" type="text/css">
     <link rel="stylesheet" href="deck/extensions/codemirror/deck.codemirror.css">
     <link rel="stylesheet" href="deck/extensions/codemirror/themes/default.css">
-    
+    <link rel="stylesheet" href="deck/extensions/hash/deck.hash.css">
     <!-- Remote Control of all the slides -->
     <link rel="stylesheet" type="text/css" href="http://deckjs-remote.no.de/deckjs-remote.css" />
     
@@ -37,6 +37,10 @@
 			background:#fff;
 			border:1px solid #aaa;
 			box-shadow:0 0 10px rgba(0%,0%,0%,0.5);
+		}
+		.workspace
+		{
+			font-size:12px;
 		}
 		html body.deck-container .deck-status {
 			color:#fff;
@@ -228,12 +232,25 @@
     <p> Your mission, should you accept it is - <b>To make start your own bio page that says your name.</b></p>
     <p>Fill in the area on the left below.</p>
     <div style="clear:both" ></div>
-	<div class="workspace" src="jsbin/first.html#html,live" height="300px">
+	<div class="workspace">
+	<div id="code0" name="code0" class="code" mode="text/html" style="display: none;"></div>
 	</div>
+	<!--
+	<div class="workspace" src="jsbin/first.html#html,live" height="300px">
+	</div> -->
     </section>
 <section class="slide">
     <h2>Done?</h2>
     <p>Does it look something like this?</p>
+	<div class="preview">
+	<div id="code01" name="code01" readOnly="true" class="code" mode="text/html" style="display: none;">
+		<html>
+		<body>
+			Shan Naziripour
+		</body>
+		</html>
+	</div>
+	</div>
 	<!--
     <div class="workspace" src="http://jsbin.com/axedaq/edit#html,live" height="500px" ></div>
     -->
@@ -257,16 +274,18 @@
 		<ul>
 			<li>You Name as the top heading</li>
 			<li>Your School as the second heading</li>
-	 		<li>An Image of yourself</li>
 	 		<li>2 Paragraphs about yourself</li>
 	 		<li>Your Favourite quote</li>
-	 		<li>Links to their social sites</li>
 	</ul>
 </td>
 <td width="2%"></td>
 <td width="50%">
-	<div class="workspace" src="jsbin/first.html#html,live" height="300px">
+	<div class="workspace">
+	<div id="code1" name="code1" class="code" mode="text/html" style="display: none;"></div>
 	</div>
+	<!--
+	<div class="workspace" src="jsbin/first.html#html,live" height="300px">
+	</div>-->
 </td>
 <td>
 
@@ -277,18 +296,43 @@
 <section class="slide">
 <h2>Grats!</h2>
 <p>Does it look something like this?</p>
-<!--
-<div class="workspace" src="http://jsbin.com/axedaq/4/edit#html,live" height="500px">
-</div> -->
+<div class="preview">
+<div id="code2" name="code2" mode="text/html" class="code" style="display: none;" readOnly="true"> 
+<html>
+<head>
+	<title>Shan Naziripour</title>
+</head>
+<body>
+	<h1>Shan Naziripour</h1>
+	<h2>UBC</h2>
+	<p>Hey, I'm a Developer at a small start-up in Vancouver!</p>
+	<p>I love HTML5, CCS3, and My Little Pony! Friendship is Magic! Bro-nie</p>
+	<blockquote>"Yay", Shan Naziripour</blockquote>
+</body>
+</html>
+</div>
+</div>
 </section>
 <section class="slide">
-	<h2>Linking</h2>
-	<p>How one page connects to another</p>
+	<h2>Linking Pages</h2>
+	<p>How one page connects to another - add a link to another page.</p>
 	<h3>a</h3>
-	<h4>href</h4>
-	<p>How to bring images to a page<p>
+	<p>The "a" tag stands for anchor. It anchors some text on the page to a URL (or another page).</p>
+	<ul>
+		<li><b>Text for the link</b> within the begin and end tag of the anchor element</li>
+		<li><b>Link to the page</b> using html attributes, specify the link in the anchor element in the "href" attribute of begin tag. URLs are in the form of http://www.blah.com/</li>
+	</ul>
+	<div class="slide">
+	<h2>Images on Pages</h2>
 	<h3>img</h3>
-	<h4>src</h4>
+	<p>This tag includes an image on an html page. <b>Note</b> This is a special void element that does not have an end tag. This element looks like..</p>
+<div id="code3" name="code3" mode="text/html" style="display: none;" readOnly="true"> 
+<img />
+</div>
+	<ul>
+		<li><b>Link to the image</b> using html attributes, use the "src" attribute to specify the image to be displayed</li>
+	</ul>
+	</div>
 </section>
 <section class="slide">
     <h2>Let's Add More About Ourselves!</h2>
@@ -303,11 +347,12 @@
 </td>
 <td width="2%"></td>
 <td width="50%">
-	<div class="workspace" src="jsbin/first.html#html,live" height="300px">
+	<div class="workspace">
+	<div id="code4" name="code4" class="code" mode="text/html" style="display: none;"></div>
 	</div>
-</td>
-<td>
-
+	<!--
+	<div class="workspace" src="jsbin/first.html#html,live" height="300px">
+	</div> -->
 </td>
 </tr>
 </table>
@@ -339,7 +384,7 @@ This is a powerful concept, <b>Separation of Concerns</b>.
 <section class="slide">
 <h2>The Power of CSS</h2>
 <!--Demo http://www.csszengarden.com/ -->
-<p><b><u>One HTML Page</u></b> - so many different ways to show the same content using differnt CSS</p>
+<p><b><u>One HTML Page</u></b> - so many different ways to show the same content using different CSS</p>
 <div class="preview">
 <iframe width="100%" height="200px" src="http://www.csszengarden.com" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
 </div>
@@ -386,7 +431,7 @@ This is a powerful concept, <b>Separation of Concerns</b>.
 <section class="slide">
 <h2>Applying Style</h2>
 <p>After each CSS Selection you specify <b>Rules</b> for those html elements.</p>
-<p>Within some curly brakets you specify the property then the value. Like so...<p>
+<p>Within some curly brackets you specify the property then the value. Like so...<p>
 </section>
 <section class="slide">
 <h3>Text Colour</h3>
@@ -521,6 +566,7 @@ This is a powerful concept, <b>Separation of Concerns</b>.
 
 <!-- Plugin code -->
 <script src="deck/extensions/codemirror/deck.codemirror.js"></script>
+<script src="deck/extensions/hash/deck.hash.js"></script>
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
@@ -531,6 +577,7 @@ This is a powerful concept, <b>Separation of Concerns</b>.
             //port: 80,
             //key: [md5 hash]
         });
+/*
 		$(document).bind('deck.change', function(event, from, to) {
 			if ($('section.deck-current .workspace iframe').length) {
 				$('section.deck-current .workspace iframe')[0].contentDocument.location.reload();
@@ -547,6 +594,7 @@ This is a powerful concept, <b>Separation of Concerns</b>.
 				}
 			});
 		});
+		*/
 	});
 </script>
 </body>
