@@ -25,7 +25,7 @@
     -->
     <style>
         body {
-            background: url('img/trycatch_bg.jpg') fixed center #cddeb4;
+            background: url('img/trycatch_bg.jpg') fixed top #cddeb4;
         }
 		h1, h2, h3, h4
 		{
@@ -38,7 +38,13 @@
 			border:1px solid #aaa;
 			box-shadow:0 0 10px rgba(0%,0%,0%,0.5);
 		}
-		.workspace
+		
+		.deck-container .slide .workspace .CodeMirror-scroll
+		{
+			height:400px;
+			overflow:auto;
+		}
+		.workspace .CodeMirror
 		{
 			font-size:12px;
 		}
@@ -233,7 +239,7 @@
     <p>Fill in the area on the left below.</p>
     <div style="clear:both" ></div>
 	<div class="workspace">
-	<div id="code0" name="code0" class="code" mode="text/html" style="display: none;"></div>
+	<textarea id="code0" name="code0" class="code" mode="text/html" style="display: none;"></textarea>
 	</div>
 	<!--
 	<div class="workspace" src="jsbin/first.html#html,live" height="300px">
@@ -243,13 +249,13 @@
     <h2>Done?</h2>
     <p>Does it look something like this?</p>
 	<div class="preview">
-	<div id="code01" name="code01" readOnly="true" class="code" mode="text/html" style="display: none;">
+	<textarea id="code01" name="code01" readOnly="true" class="code" mode="text/html" style="display: none;">
 		<html>
-		<body>
-			Shan Naziripour
-		</body>
+			<body>
+				Shan Naziripour
+			</body>
 		</html>
-	</div>
+	</textarea>
 	</div>
 	<!--
     <div class="workspace" src="http://jsbin.com/axedaq/edit#html,live" height="500px" ></div>
@@ -297,46 +303,53 @@
 <h2>Grats!</h2>
 <p>Does it look something like this?</p>
 <div class="preview">
-<div id="code2" name="code2" mode="text/html" class="code" style="display: none;" readOnly="true"> 
+<textarea id="code2" name="code2" mode="text/html" class="code" style="display: none;" readOnly="true"> 
 <html>
-<head>
-	<title>Shan Naziripour</title>
-</head>
-<body>
-	<h1>Shan Naziripour</h1>
-	<h2>UBC</h2>
-	<p>Hey, I'm a Developer at a small start-up in Vancouver!</p>
-	<p>I love HTML5, CCS3, and My Little Pony! Friendship is Magic! Bro-nie</p>
-	<blockquote>"Yay", Shan Naziripour</blockquote>
-</body>
+	<head>
+		<title>Shan Naziripour</title>
+	</head>
+	<body>
+		<h1>Shan Naziripour</h1>
+		<h2>UBC</h2>
+		<p>Hey, I'm a Developer at a small start-up in Vancouver!</p>
+		<p>I love HTML5, CCS3, and My Little Pony! Friendship is Magic! Bro-nie</p>
+		<blockquote>"Yay", Shan Naziripour</blockquote>
+	</body>
 </html>
-</div>
+</textarea>
 </div>
 </section>
 <section class="slide">
 	<h2>Linking Pages</h2>
-	<p>How one page connects to another - add a link to another page.</p>
 	<h3>a</h3>
-	<p>The "a" tag stands for anchor. It anchors some text on the page to a URL (or another page).</p>
+	<p>The "a" tag stands for anchor. It anchors some text on the page to a URL (or another page). This is how the web is connected. A link or anchor on one page to another.</p>
 	<ul>
 		<li><b>Text for the link</b> within the begin and end tag of the anchor element</li>
 		<li><b>Link to the page</b> using html attributes, specify the link in the anchor element in the "href" attribute of begin tag. URLs are in the form of http://www.blah.com/</li>
 	</ul>
-	<div class="slide">
+<div class="preview">
+<textarea class="code" mode="text/html" style="display: none;" readOnly="true"> 
+<a href="http://www.blah.com" >Text that will take you to www.blah.com</a>
+</textarea>
+</div>
+</section>
+<section class="slide">
 	<h2>Images on Pages</h2>
 	<h3>img</h3>
-	<p>This tag includes an image on an html page. <b>Note</b> This is a special void element that does not have an end tag. This element looks like..</p>
-<div id="code3" name="code3" mode="text/html" style="display: none;" readOnly="true"> 
-<img />
-</div>
+	<p>This tag is used to include an image on an HTML page.</p>
+	 <p><b>Note!</b> This is a special void element that does not have an end tag. This element looks like..</p>
 	<ul>
 		<li><b>Link to the image</b> using html attributes, use the "src" attribute to specify the image to be displayed</li>
 	</ul>
-	</div>
+	<div class="preview">
+<textarea class="code" mode="text/html" style="display: none;" readOnly="true"> 
+<img src="http://www.facebook.com/myImage.png" />
+</textarea>
+	</div>	
 </section>
 <section class="slide">
     <h2>Let's Add More About Ourselves!</h2>
-    <p>Markup the article on the left below in HTML</p>
+	<p>Go find some URL's of your social sites, images of yourself and put them in your Biography page</p>
     <table width="100%">
     <tr>
     <td width="48%">
@@ -397,15 +410,106 @@ This is a powerful concept, <b>Separation of Concerns</b>.
 
 </section>
 <section class="slide">
-<h2>Selecting the Markup</h2>
-<p>Create CSS Selectors to select a specific HTML element.</p>
-<ul>
-<li>Select a tag</li>
-<li>Select a child with a certain parent</li>
-<li>Select by id</li>
-<li>Select by className</li>
-<li>Multiple select statements</li>
-</ul>
+<h2>Selecting the Markup (HTML)</h2>
+<p>We've now organized text in a very standard way. With the <i>power of CSS</i> we can select any or the elements on an HTML Page to force our styling upon</p>
+<h3>Select a tag</h3>
+<p>Let us first select a tag such as : <b>h1</b>,<b>h2</b>,<b>a</b>,<b>p</b> or many more.</p>
+<div class="preview slide">
+<textarea class="code" mode="text/html" style="display: none;" readOnly="true"> 
+<style>
+h1 
+	{
+		
+	}
+p 
+	{
+		
+	}
+</style>
+</textarea>
+</div>
+<div class="slide">
+<p>Notice the new HTML element <b>style</b>. With this element we specify CSS on a HTML page.</p>
+<p><i>CSS</i> has a standard format starting with a selector of HTML elements then curly backets wrapped around look and feel specification for those elements. These are called <b>CSS Rules</b>. You can have several of these on CSS document.</p>
+</div>
+</section>
+<section class="slide">
+	<h2>Select elements inside another element</h2>
+	<p>Nesting elements in HTML is very common as pages can get <b>very</b> big. If you want to select a child elements inside a parent element then, use the parent tag followed by a <i>space</i> then the child tag for the CSS selection. Like so..</p>
+	<div class="preview slide">
+	<textarea class="code" mode="text/html" style="display: none;" readOnly="true"> 
+	<style>
+	blockquote p 
+	{
+		
+	}
+	</style>
+	</textarea>
+	</div>
+</section>
+<section class="slide">
+	<h2>Using multiple CSS Selections for one CSS Rule</h2>
+	<p>Repeating yourself is bad - you don't want to repeat look and feel specifications for certain CSS selections. So - to use multiple CSS Selections for one rule, simply separate the selections with commas. Like so..</p>
+	<div class="preview slide">
+	<textarea class="code" mode="text/html" style="display: none;" readOnly="true"> 
+	<style>
+	h1, h2, h3, h4 
+	{
+		
+	}
+	</style>
+	</textarea>
+	</div>
+</section>
+<section class="slide">
+	<h2>I need to be more specific!</h2>
+	<p>Now - if you need to be more specific for certain elements on a page you can add markup to those HTML elements. Using the <b>class</b> attribute on any HTML element you can select elements with specific classes in their <b>class</b> attribute. The <b>class</b> attribute can be used to specify several class names separated by spaces. Selecting them in css is achieved with a <b>period</b> after the <b>tag name</b> followed by the <b>class name</b>.</p>
+	<div class="preview slide">
+	<textarea class="code" mode="text/html" style="display: none;" readOnly="true"> 
+	<p class="pretty intro">Like wow!</p>
+	<p class="pretty">This is totally awesome.</p>
+	<p>And epic.</p>
+	<style>
+	p
+	{
+		
+	}
+	p.intro
+	{
+		
+	}
+	p.pretty
+	{
+		
+	}
+	</style>
+	</textarea>
+	</div>
+</section>
+<section class="slide">
+	<h2>I only want to style ONE HTML element</h2>
+	<p>There are many times when</p>
+	<div class="preview slide">
+	<textarea class="code" mode="text/html" style="display: none;" readOnly="true"> 
+	<p class="pretty intro">Like wow!</p>
+	<p class="pretty">This is totally awesome.</p>
+	<p>And epic.</p>
+	<style>
+	p
+	{
+		
+	}
+	p.intro
+	{
+		
+	}
+	p.pretty
+	{
+		
+	}
+	</style>
+	</textarea>
+	</div>
 </section>
 <section class="slide">
 <h2>Quiz Time</h2>

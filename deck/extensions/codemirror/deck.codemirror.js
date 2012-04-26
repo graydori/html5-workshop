@@ -85,6 +85,7 @@
               {
                 mode : !!codeblock.attr('mode') ? codeblock.attr('mode') : opts.codemirror.mode,
                 theme : !!codeblock.attr('theme') ? codeblock.attr('theme') : opts.codemirror.theme,
+				readOnly : !!codeblock.attr('readOnly') ? codeblock.attr('readOnly') : false,
                 onFocus : function(e) {
                   inEditor = true;
                 },
