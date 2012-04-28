@@ -80,6 +80,7 @@
 
         // initialize defaults.
         var codeblock = $(codeblock),
+			currentIframe = null,
             editor    = null,
             options   = $.extend(opts.codemirror,
               {
@@ -91,7 +92,20 @@
                 },
                 onBlur : function(e) {
                   inEditor = false;
-                }
+                },
+				onChange: (codeblock.attr('live')) ? function (e) { 
+						currentIframe.document.documentElement.innerHTML = e.getValue();
+						if (codeblock.parent().find('.CodeMirror-focused').length) {
+							if (codeblock.attr("persist")) {
+								$(window.codeRef).each(
+									function (x, e2) {
+										if (e2 != e) {
+											 e2.setValue(e.getValue()); 
+										}
+									});
+							}
+						}
+					}: null,
               }
             );
 
@@ -118,6 +132,23 @@
           e.stopPropagation();
         });
 
+		//Handling if it's a live page
+		if (codeblock.attr("live")){
+			var iframe = $('<iframe frameborder="0" height="'+codeblock.parent().height()+'px" >');
+			codeblock.parent().prepend(iframe).append("<div style='clear:both'></div>");
+			
+			currentIframe = frames[frames.length - 1];
+			currentIframe.document.documentElement.innerHTML = editor.getValue();
+		}
+		if (codeblock.attr("persist"))
+		{
+			if (!window.codeRef) {
+				window.codeRef = new Array();
+			} else {
+				editor.setValue(window.codeRef[0].getValue());
+			}
+			window.codeRef.push(editor);
+		}		
         if (opts.codemirror.runnable || codeblock.attr("runnable")) {
           // make the code runnable
           var wrapper = editor.getWrapperElement(),

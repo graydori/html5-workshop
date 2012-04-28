@@ -16,8 +16,11 @@
     <link rel="stylesheet" href="deck/extensions/codemirror/themes/default.css">
     <link rel="stylesheet" href="deck/extensions/hash/deck.hash.css">
     <!-- Remote Control of all the slides -->
+	<!--
     <link rel="stylesheet" type="text/css" href="http://deckjs-remote.no.de/deckjs-remote.css" />
-    
+	-->
+    <link rel="stylesheet" type="text/css" href="css/deckjs-remote.css" />
+	
     <!-- Themes and transitions -->
 	<link rel="stylesheet" href="deck/themes/transition/vertical-slide.css" type="text/css">
     <!--
@@ -25,7 +28,7 @@
     -->
     <style>
         body {
-            background: url('img/trycatch_bg.jpg') fixed top #cddeb4;
+            background: url('img/trycatch_bg.jpg') fixed right center #cddeb4;
         }
 		h1, h2, h3, h4
 		{
@@ -38,7 +41,25 @@
 			border:1px solid #aaa;
 			box-shadow:0 0 10px rgba(0%,0%,0%,0.5);
 		}
-		
+		.deck-container .workspace iframe,
+		.deck-container .preview iframe
+		{
+			float:right;
+			width:25%;
+			margin:0;
+			
+		  -webkit-transition: width 0.3s ease-out; 
+		     -moz-transition: width 0.3s ease-out; 
+		      -ms-transition: width 0.3s ease-out; 
+		       -o-transition: width 0.3s ease-out; 
+		          transition: width 0.3s ease-out;
+
+		}
+		.deck-container .workspace iframe:hover,
+		.deck-container .preview iframe:hover
+		{
+			width:50%;
+		}
 		.deck-container .slide .workspace .CodeMirror-scroll
 		{
 			height:400px;
@@ -60,23 +81,71 @@
         section {
             background:rgba(100%,100%,100%,0.2);
         }
-        .graphicBox
-        {
+        
+        ul.graphicList li.graphicBox
+        {   
             float:left;
             display:block;
             list-style:none;
             margin-right:10px !important;
+            position:relative;
+			width:270px;
+			height:170px;
+		}
+        ul.graphicList li.graphicBox img
+		{
+			position:absolute;
+			top:0;
+			left:0;
+			width:270px;
+			height:170px;
+			max-width:270px;
+			max-height:170px;
+			margin:0;
+		  -webkit-transition: all 0.3s ease-out; 
+		     -moz-transition: all 0.3s ease-out; 
+		      -ms-transition: all 0.3s ease-out; 
+		       -o-transition: all 0.3s ease-out; 
+		          transition: all 0.3s ease-out;
+
         } 
-        /*
-        .graphicList li.graphicBox
-        {   
-            width:300px;
-        } 
-        */
-        .graphicList
+        ul.graphicList li.graphicBox:hover img
+		{
+			left:-140px;
+			max-width:460px;
+			max-height:323px;
+			width:460px;
+			height:323px;
+			z-index:999;
+		}
+        ul.graphicList
         {
+            list-style:none;
             margin:0;
         }
+
+
+.deck-container .deck-remote-join-message, .deck-container .deck-remote-leave-message, .deck-container .deck-remote-master-message
+{
+	border:0;
+	top:0;
+	margin:0;
+	left:0;
+	width:100%;
+	height:100%;
+	text-align:center;
+}
+.deck-remote-message-content
+{
+	width:300px;
+	position:fixed;
+	left:50%;
+	margin-left:-150px !important;
+	top:50%;
+	margin-top:-50px !important;
+	text-align:center;
+}
+
     </style>
 	<!-- Replace path with correct path to Modernizr file. -->
 	<script src="js/modernizr.custom.js"></script>
@@ -91,25 +160,27 @@
 </section>
 <section class="slide">
     <!-- Form asking about current level of knowledge -->
-<iframe src="https://docs.google.com/spreadsheet/viewform?formkey=dGs5aE5RSWN0cEQ4d3IxM1RDXzM5Ync6MQ#gid=0" width="100%" height="500px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+<iframe src="https://docs.google.com/spreadsheet/viewform?formkey=dGs5aE5RSWN0cEQ4d3IxM1RDXzM5Ync6MQ#gid=0" width="100%" height="600px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
 </section>
 <section class="slide">
 	<h2>Who are we?</h2>
-    <div style="float:left;width:300px;margin-right:20px;">
-    <img src="http://placehold.it/300/aaa" />
+    <div style="float:left;width:50%;">
+    <img src="img/Nadya.jpg" style="float:left;margin:0 10px;"  />
     <h3>Nadya Calderon</h3>
     <p>Software Engineer. Ph.D Student at the School of Interactive Arts and Technologies, Simon Fraser University.</p>
     </div>
-    <div style="float:left;width:300px;margin-right:10px;">
-    <img src="http://placehold.it/300/aaa" />
+    <div style="float:left;width:50%;">
+    <img src="img/Shan.jpg" width="150px" style="float:left;margin:0 10px;" />
     <h3>Shan Naziripour</h3>
     <p>Deveopler at Vancouver Startup working on social networking and educational technologies</p>
     </div>
-    <div style="float:left;width:100px;">
+    <div style="clear:both;text-align:center;position:relative;">
+	<img src="img/help.jpg" width="500px" />
+	<div style="position:absolute;top:10%;left:0;width:100%;text-align:center;color:#fff;">
     <h4>We're here to help!</h4>
     <p>Ask us anything and we'll try to help</p>
-    <img src="http://placehold.it/100/400/aaa" />
+	</div>
     </div>
 </section>
 <section class="slide">
@@ -171,9 +242,9 @@
 	<div class="slide">
     <p><b>For example</b> To describe something is a paragraph with HTML you would wrap it in a beginning &nlt;p&ngt; and ending &nlt;/p&ngt;.
 	 Like so.. </p>
-    <pre class="slide"><code>&nlt;p&ngt;
+    <div class="slide preview"><textarea class="code" mode="text/html" style="display: none;" readOnly="true"><p>
     This is a paragraph
-&nlt;p&ngt;</code></pre>
+</p></textarea></div>
 	</div>
 	
 
@@ -188,16 +259,17 @@
 
 <section class="slide">
     <h2>What makes up a HTML document or Web page?</h2>
-    <table width="100%" border="0">
+    <table width="100%" border="0" style="table-layout:fixed;">
     <tr><td>
-    <pre><code>&nlt;html&ngt;
-    &nlt;head&ngt;
-        &nlt;title&ngt;Title of the Document&nlt;/title&ngt;
-    &nlt;/head&ngt;
-    &nlt;body&ngt;
+<div class="preview"><textarea class="code" readOnly="true" mode="text/html" style="display: none;"><html>
+	<head>
+	    <title>Title of the Document</title>
+	</head>
+	<body>
         Contents of the Document
-    &nlt;/body&ngt;
-&nlt;/html&ngt;</code></pre></td><td width="210" align="right"><img src="http://farm4.staticflickr.com/3493/3913797474_d2a3c822c1_b.jpg" width="160" /><i>Anatomy of an HTML Web Page</i></td></tr></table>
+	</body>
+</html></textarea></div>
+</td><td width="210" align="right"><img src="http://farm4.staticflickr.com/3493/3913797474_d2a3c822c1_b.jpg" width="160" /><i>Anatomy of an HTML Web Page</i></td></tr></table>
     <ul>
     <li class="slide">
     <b> &nlt;html&ngt; </b> HTML tags tell the browser where the HTML starts and stops. Every HTML file must begin and end with the html tags.
@@ -234,16 +306,13 @@
     <p>Fill in the area on the left below.</p>
     <div style="clear:both" ></div>
 	<div class="workspace">
-	<textarea id="code0" name="code0" class="code" mode="text/html" style="display: none;"></textarea>
+	<textarea id="code0" persist="true" name="code0" class="code"  live="true"  mode="text/html" style="display: none;"></textarea>
 	</div>
-	<!--
-	<div class="workspace" src="jsbin/first.html#html,live" height="300px">
-	</div> -->
     </section>
 <section class="slide">
     <h2>Mission Complete!</h2>
 	<div class="preview">
-	<textarea readOnly="true" class="code" mode="text/html" style="display: none;"><html>
+	<textarea readOnly="true" class="code"  live="true"  mode="text/html" style="display: none;"><html>
 <body>
 	Shan Naziripour
 </body>
@@ -276,7 +345,7 @@
 <td width="2%"></td>
 <td width="50%">
 	<div class="workspace">
-	<textarea id="code1" name="code1" class="code" mode="text/html" style="display: none;"></textarea>
+	<textarea id="code1" persist="true" name="code1" class="code"  live="true"  mode="text/html" style="display: none;"></textarea>
 	</div>
 </td>
 <td>
@@ -288,7 +357,7 @@
 <section class="slide">
 <h2>Mission Complete!</h2>
 <div class="preview">
-<textarea mode="text/html" class="code" style="display: none;" readOnly="true"><html>
+<textarea mode="text/html" class="code"  live="true"  style="display: none;" readOnly="true"><html>
 <head>
 <title>Shan Naziripour</title>
 </head>
@@ -311,7 +380,7 @@
 		<li><b>Link to the page</b> using html attributes, specify the link in the anchor element in the "href" attribute of begin tag. URLs are in the form of http://www.blah.com/</li>
 	</ul>
 <div class="preview">
-<textarea class="code" mode="text/html" style="display: none;" readOnly="true"> 
+<textarea class="code"  live="true"  mode="text/html" style="display: none;" readOnly="true"> 
 <a href="http://www.blah.com" >Text that will take you to www.blah.com</a>
 </textarea>
 </div>
@@ -344,7 +413,7 @@
 <td width="2%"></td>
 <td width="50%">
 	<div class="workspace">
-	<textarea id="code4" name="code4" class="code" mode="text/html" style="display: none;"></textarea>
+	<textarea id="code4" persist="true" name="code4" class="code"  live="true"  mode="text/html" style="display: none;"></textarea>
 	</div>
 </td>
 </tr>
@@ -353,14 +422,14 @@
 <section class="slide">
 <h2>Mission Complete!</h2>
 <div class="preview">
-<textarea mode="text/html" class="code" style="display: none;" readOnly="true"> 
+<textarea mode="text/html" class="code"  live="true"  style="display: none;" readOnly="true"> 
 <html>
 <head>
 <title>Shan Naziripour</title>
 </head>
 <body>
 	<h1>Shan Naziripour</h1>
-	<img src="http://a7.sphotos.ak.fbcdn.net/hphotos-ak-ash4/317283_968153545581_21007880_46534270_3543759_n.jpg" />
+	<img src="img/Shan.jpg" />
 	<h2>UBC</h2>
 	<p>Hey, I'm a Developer at a small start-up in Vancouver!</p>
 	<p>I love HTML5, CCS3, and My Little Pony! Friendship is Magic! Bro-nie</p>
@@ -376,9 +445,9 @@
     <h2>What about making it beautiful?</h2>
 	<p>Lets do a little guessing game. Can you notice any change on these sites compared to how they look now? </p>
     <ul class="graphicList">
-    <li class="slide graphicBox" ><img src="img/thefacebook1.jpg" width="270" height="170"/></li>
-    <li class="slide graphicBox" ><img src="img/apple1.jpg" width="270" height="170"/></li>
-    <li class="slide graphicBox" ><img src="img/twitter1.jpg" width="270" height="170"/></li>
+    <li class="slide graphicBox" ><img src="img/thefacebook1.jpg"/></li>
+    <li class="slide graphicBox" ><img src="img/apple1.jpg" /></li>
+    <li class="slide graphicBox" ><img src="img/twitter1.jpg" /></li>
     </ul>
 	
 	<div class="slide">
@@ -405,15 +474,14 @@ This is a powerful concept: <b>Separation of Concerns</b>.
 <section class="slide">
 <h2>The Power of CSS</h2>
 <!--Demo http://www.csszengarden.com/ -->
-<p><b><u>One HTML Page</u></b> - so many different ways to show the same content using different CSS</p>
-<div class="preview">
-<iframe width="100%" height="200px" src="http://www.csszengarden.com" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
-</div>
-<div class="preview">
-<iframe width="100%" height="200px"  src="http://www.csszengarden.com/?cssfile=/212/212.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
-</div>
-<div class="preview">
-<iframe width="100%" height="200px"  src="http://www.csszengarden.com/?cssfile=/211/211.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
+<div class="preview" style="height:400px;position:relative;">
+	<div style="width:200px;position:absolute;top:0;left:0;padding:15px 10px;">
+	<b>One HTML Page</b> - <br/> so many different ways to show the same HTML using different CSS
+	</div>
+<iframe width="100%" height="400px" style="z-index:99;position:relative;" src="http://www.csszengarden.com" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
+<iframe width="100%" height="400px" style="z-index:99;position:relative;"  src="http://www.csszengarden.com/?cssfile=/212/212.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
+<iframe width="100%" height="400px" style="z-index:99;position:relative;"  src="http://www.csszengarden.com/?cssfile=/211/211.css&page=0" border="0"  allowfullscreen="allowfullscreen" frameborder="0" ></iframe>
+<div stlye="clear:both"></div>
 </div>
 </section>
 <section class="slide">
@@ -486,10 +554,10 @@ p#choose {}
 </section>
 <section class="slide">
 <h2>Pop Quiz</h2>
-<table>
+<table width="793px">
 <tr>
 <td width="48%">
-<h3>How do you select different parts of the following HTML Page?</h3>
+<p><b>How do you select different parts of the following HTML Page?</b></p>
 <ol>
 <li class="slide">All paragraphs</li>
 <li class="slide">All paragraphs with class <b>footer</b> in a blockquote</li>
@@ -498,9 +566,9 @@ p#choose {}
 </ol>
 </td>
 <td width="2%"></td>
-<td>
+<td width="50%">
 	<div class="preview">
-	<textarea mode="text/html" class="code" style="display: none;" readOnly="true"><html>
+	<textarea mode="text/html" class="code"  live="true"  style="display: none;" readOnly="true"><html>
 <head>
 <title>Shan Naziripour</title>
 </head>
@@ -557,33 +625,30 @@ p {
 <p>Pixels is a unit of measurement relative to your screen. This unit is commonly use in web design.</p>
 <p>Look below to see boxes in incrementing pixel sizes using the <b>width</b> and <b>height</b> css properties which take a unit of measurement as their value.</p>
 <div class="preview">
-<textarea class="code" mode="text/html" style="display: none;" readOnly="true"><style>
-div.1 {width: 1px; height:1px; background:red;} 
-div.2 {width: 2px; height:2px; background:blue;} 
-div.3 {width: 3px; height:3px; background:yellow;} 
-div.4 {width: 4px; height:4px; background:green;} 
-div.5 {width: 5px; height:5px; background:orange;} 
-div.6 {width: 6px; height:6px; background:red;} 
-div.7 {width: 7px; height:7px; background:yellow;} 
+<textarea class="code"  live="true"  mode="text/html" style="display: none;" readOnly="true"><style>
+div.one {width: 1px; height:1px; background:red;} 
+div.two {width: 3px; height:3px; background:blue;} 
+div.three {width: 5px; height:5px; background:yellow;} 
+div.four {width: 10px; height:10px; background:green;} 
+div.five {width: 100px; height:100px; background:orange;}
 </style>
-<div class="1"></div><div class="2"></div><div class="3"></div><div class="4"></div><div class="5"></div><div class="6"></div><div class="7"></div></textarea>
+<div class="one"></div><div class="two"></div><div class="three"></div><div class="four"></div><div class="five"></div></textarea>
 </div>
 </section>
-
 <section class="slide">
-<h3>Spacing</h3>
-<img style="float:right;" src="img/css-margin-padding.giff" />
+<h2>Spacing</h2>
+<img style="float:right;" src="img/css-margin-padding.gif" />
 <p><b>margin</b> is a property to specify the spacing around the HTML element.</p>
-<p>While, <b>padding<b> is a property to specify the spacing of the text inside the HTML element.</p>
+<p>While, <b>padding</b> is a property to specify the spacing of the text inside the HTML element.</p>
 <p>Both of these properties take a unit of measurement as the value. These properties can also take a list of units to specify specific padding and margins for the different sides of the element in the following order : first top, right, bottom, then left separated by spaced</p>
 
 <div class="preview slide">
-<textarea class="code" mode="text/html" style="display: none;" readOnly="true"><style>
-p.1 { margin: 10px 5px 2px 5px; padding: 4px; background:red; color:white;}
-p.2 { margin:0px; padding:0; background:blue;color:white;}
+<textarea class="code"  live="true"  mode="text/html" style="display: none;" readOnly="true"><style>
+p.one { margin: 10px 5px 2px 5px; padding: 4px; background:red; color:white;}
+p.two { margin:0px; padding:0; background:blue;color:white;}
 </style>
-<p class="1">I'm Paragraph One</p>
-<p class="2">I'm Paragraph Two</p>
+<p class="one">I'm Paragraph One</p>
+<p class="two">I'm Paragraph Two</p>
 </textarea>
 </div>
 <div class="slide">
@@ -592,10 +657,11 @@ p.2 { margin:0px; padding:0; background:blue;color:white;}
 </section>
 
 <section class="slide">
+	
 <h2>Typography</h2>
 <h3>font-family</h3>
 <p>The <b>font-family</b> property specifies the font of the HTML element.</p>
-<p>The value for the <b>font-family</p> property can be any of the fonts on your Computer.</p>
+<p>The value for the <b>font-family</b> property can be any of the fonts on your Computer.</p>
 <ul>
 	<li class="slide" style="font-family:Arial;">Arial</li>
 	<li class="slide" style="font-family:Impact;">Impact</li>
@@ -604,26 +670,26 @@ p.2 { margin:0px; padding:0; background:blue;color:white;}
 <div class="slide">
 	<h3>font-size</h3>
 	<p>The <b>font-size</b> property specifies the font size of the text in the HTML element.</p>
-	<p>The value for the <b>font-size</p> property is </p>
+	<p>The value for the <b>font-size</b> property is a unit of measurement.</p>
 </div>
 </section>
 
 <section class="slide">
 <h2>Let's Style your Bio!</h2>
 <div class="workspace">
-<textarea id="code5" name="code5" class="code" mode="text/html" style="display: none;"></textarea>
+<textarea id="code5" persist="true" name="code5" class="code"  live="true"  mode="text/html" style="display: none;"></textarea>
 </div>
 </section>
 
 <section class="slide">
-<h2>There's More!... CSS3</h2>
-<p>CSS3 is the new upgrade to the CSS specification providing new visually stimmulating properties to be used on your Pages</p>
+<h2>There's More!</h2>
+<p><b>CSS3</b> is the new upgrade to the CSS specification providing new visually stimulating properties to be used on your Pages</p>
 <p><b>Advisory!</b> CSS3 is new and not supported on all browsers. So - you may see you pimping page but others won't see it that way</p>
 </section>
 <section class="slide">
 <h2>Box Shadow</h2>
 <div class="preview">
-<textarea class="code" mode="text/html" style="display: none;" readOnly="true"><style>
+<textarea class="code" mode="text/html" style="display: none;" readOnly="true" live="true"><style>
 div {
 	box-shadow: 1px 2px 10px gray; 
 	}
@@ -638,56 +704,77 @@ div {
 <section class="slide">
 <h2>Text Shadow</h2>
 <div class="preview">
-<textarea class="code" mode="text/html" style="display: none;" readOnly="true"><style>
-div {
-	text-shadow:0px 20px;
-	}
+<textarea class="code" mode="text/html" style="display: none;" readOnly="true" live="true"><style>
+h1 {
+	text-shadow:1px 5px 10px green;
+}
 </style>
-<h1>Do I Look More Pretty?</h1>
-</textarea>
+<h1>Do I Look More Pretty?</h1></textarea>
 </div>
 <div class="slide">
-<p>text-shadow: (<b>h-shadow</b> (<b>v-shadow</b>) (<b>blur</b>) (<b>color</b>);</p>
+<p>text-shadow: (<b>h-shadow</b>) (<b>v-shadow</b>) (<b>blur</b>) (<b>color</b>);</p>
 </div>
 </section>
 <section class="slide">
 <h2>Let's Pimp your Bio!</h2>
 <!-- add a shadow, reflection -->
 <div class="workspace">
-<textarea id="code6" name="code6" class="code" mode="text/html" style="display: none;"></textarea>
+<textarea id="code6" persist="true" name="code6" class="code"  live="true"  mode="text/html" style="display: none;"></textarea>
 </div>
 </section>
 <section class="slide">
-<h2>Animation</h2>
+<h2>Living Pages</h2>
 <p>Think that's was all you could do with CSS3?</p>
 <div class="slide">
 <h3>NO! There's More!</h3>
-<p>You can make HTML elements on a page <b>animated</b> too. And I'm not referring to Animated gifs</p>
+<p>You can make HTML elements on a page <b>animated</b> too. And I'm not referring to Animated gifs like this ..</p>
 <img src="img/animated-gif.gif" />
 </div>
 </section>
 <section class="slide">
 <h2>Hover and Transitions</h2>
-<p>Using the <b>:hover</b> CSS selector specify a style for an HTML element that you are currently hovering with the mouse</p>
-<p>On top of that with</p>
+<p>Using the <b>:hover</b> CSS selector - specify a style for an HTML element that you are currently hovering with the mouse.</p>
+<p>On top of that with CSS3 <b>transition</b> property the HTML element will tween when any change to the style of the element happens.</p>
+<div class="preview slide">
+<textarea class="code"  live="true"  mode="text/html" style="display: none;" readOnly="true"><style>
+div { 
+	background:red; padding:10px; 
+	-webkit-transition: all 0.3s ease-out 
+}
+div:hover { background:blue; }
+</style>
+<div>Hover Over Me!</div></textarea>
+</div>
+<div class="slide">
+	<p>transition:(<b>the property to transition</b>) (<b>duration</b>) (<b>easing method of the transition</b>);</p>
+</div>
 </section>
 <section class="slide">
 <h2>Rotate</h2>
-<p>Talk about new CSS3 attributes</p>
+<div class="preview slide">
+<textarea class="code" mode="text/html" style="display: none;" live="true" readOnly="true"><style>
+img { -webkit-transition:all 0.3s ease-out; }
+img:hover { -webkit-transform: rotate(180deg); }
+</style>
+<img src="img/spiral.png" /></textarea>
+</div>
+<div class="slide">
+	<p>transform: rotate( <b>degrees of rotation</b> );</p>
+</div>
 </section>
 <section class="slide">
 <h2>Let's bring your Bio to Life!</h2>
 <!-- pulsating and rotating animation -->
 <div class="workspace">
-<textarea id="code7" name="code7" class="code" mode="text/html" style="display: none;"></textarea>
+<textarea id="code7" persist="true" name="code7" class="code"  live="true"  mode="text/html" style="display: none;"></textarea>
 </div>
 </section>
 <section class="slide">
 <h1>Fin.</h1>
 </section>
 <section class="slide">
-    <!-- Questionaire for the current level of knowledge -->
-    <iframe src="https://docs.google.com/spreadsheet/viewform?formkey=dDdtblhjRUNhUGsySWRsbjVfc3hlckE6MA#gid=0" width="100%" height="500px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    <!-- Questionnaire for the current level of knowledge -->
+    <iframe src="https://docs.google.com/spreadsheet/viewform?formkey=dDdtblhjRUNhUGsySWRsbjVfc3hlckE6MA#gid=0" width="100%" height="600px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 </section>
     
 	
@@ -701,22 +788,28 @@ div {
 <a href="#" class="deck-next-link" title="Next">&#8594;</a>
 
 <div class="deck-remote-join-message">
-    <p>There is a session available. Would you like to join?</p>
+	<div class="deck-remote-message-content">
+    <p>There is a presentation happening! Join Now</p>
     <p class="deck-remote-links">
+		<!--
         <a href="#" class="deck-remote-ignore-link">Ignore</a>
-        |
+        | -->
         <a href="#" class="deck-remote-join-link">Join</a>
     </p>
+	</div>
 </div>
 
 <div class="deck-remote-leave-message">
+	<div class="deck-remote-message-content">
     <p>The session has ended.</p>
     <p class="deck-remote-links">
         <a href="#" class="deck-remote-close-link">Close</a>
     </p>
+	</div>
 </div>
 
 <div class="deck-remote-master-message">
+	<div class="deck-remote-message-content">
     <p>Do you have the key?</p>
     <p class="deck-remote-master-feedback"></p>
     <form class="deck-remote-master-form" action="">
@@ -726,12 +819,16 @@ div {
         <p class="deck-remote-links">
             <button type="submit">Start Session</button>
         </p>
-    </form> 
+    </form>
+	</div>
 </div>    
 <!-- End of Other extension HTML snippets go here, at the bottom of the deck container. -->
 
 <!-- Update these paths to point to the correct files. -->
+<!--
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+-->
+<script src="js/jquery-1.7.2.min.js"></script>
 <script src="deck/core/deck.core.js"></script>
 
 <!-- Add any other extension JS files here -->
@@ -740,7 +837,10 @@ div {
 <script src="deck/extensions/scale/deck.scale.js"></script>
 <script src="deck/extensions/status/deck.status.js"></script>
 <!-- Remote -->
+<!--
 <script src="http://deckjs-remote.no.de/deckjs-remote.js"></script>
+-->
+<script src="js/deckjs-remote.js"></script>
 
 <!-- Code Mirror -->
 <!-- Base codemiror code -->
