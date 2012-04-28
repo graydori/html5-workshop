@@ -35,12 +35,14 @@
 			font-family:Arial;
 		}
 		.preview,
-		.workspace
+		.workspace,
+		.questionaire
 		{
 			background:#fff;
 			border:1px solid #aaa;
 			box-shadow:0 0 10px rgba(0%,0%,0%,0.5);
 		}
+		.questionaire {margin-top:20px !important;}
 		.deck-container .workspace iframe,
 		.deck-container .preview iframe
 		{
@@ -124,6 +126,7 @@
             margin:0;
         }
 
+b.notice { display:inline-block;color:#fff;background:rgba(0%,0%,0%,0.5);padding:5px; background-image:url(img/notice.png);background-repeat:no-repeat;background-position:6px center; padding-left:25px;border-radius:10px;box-shadow:0 0 10px rgba(0%,0%,0%,0.3);-webkit-box-shadow:0 0 10px rgba(0%,0%,0%,0.3);}
 
 .deck-container .deck-remote-join-message, .deck-container .deck-remote-leave-message, .deck-container .deck-remote-master-message
 {
@@ -146,6 +149,15 @@
 	text-align:center;
 }
 
+.snippet
+{
+	margin:0 10px;
+	background:rgba(100%,100%,100%,0.5);
+	text-align:center;
+	padding:20px !important;
+	font-family:monospace;
+}
+.snippet b { font-style:italic;}
     </style>
 	<!-- Replace path with correct path to Modernizr file. -->
 	<script src="js/modernizr.custom.js"></script>
@@ -160,8 +172,9 @@
 </section>
 <section class="slide">
     <!-- Form asking about current level of knowledge -->
+<div class="questionaire">
 <iframe src="https://docs.google.com/spreadsheet/viewform?formkey=dGs5aE5RSWN0cEQ4d3IxM1RDXzM5Ync6MQ#gid=0" width="100%" height="600px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-
+</div>
 </section>
 <section class="slide">
 	<h2>Who are we?</h2>
@@ -226,7 +239,7 @@
 	</div>
 	
 	<div class="slide">
-		<p> <b>Think about this:</b> not just CS and Engineering fields require the mastering of programming and HTML. These days Design, Art, Communications, and many other fields count on you knowing about it! </p> 
+		<p> <b class="notice">Think about this:</b> not just CS and Engineering fields require the mastering of programming and HTML. These days Design, Art, Communications, and many other fields count on you knowing about it! </p> 
 	</div>
 
 	
@@ -332,8 +345,8 @@
     <h2>Let's Apply Ourselves!</h2>
     <table width="100%">
     <tr>
-    <td width="48%">
-	    <p>Markup the article on the left below in HTML</p>
+    <td width="30%">
+	    <p>Markup your bio on the left with the following in HTML</p>
 		<ul>
 			<li>You Name as the top heading</li>
 			<li>Your School as the second heading</li>
@@ -342,7 +355,7 @@
 	</ul>
 </td>
 <td width="2%"></td>
-<td width="50%">
+<td width="68%">
 	<div class="workspace">
 	<textarea id="code1" persist="true" name="code1" class="code"  live="true"  mode="text/html" style="display: none;"></textarea>
 	</div>
@@ -379,7 +392,7 @@
 		<li><b>Link to the page</b> using html attributes, specify the link in the anchor element in the "href" attribute of begin tag. URLs are in the form of http://www.blah.com/</li>
 	</ul>
 <div class="preview">
-<textarea class="code"  live="true"  mode="text/html" style="display: none;" readOnly="true"> 
+<textarea class="code"  live="true"  mode="text/html" style="display: none;" > 
 <a href="http://trycatch.cmpt.sfu.ca/" >Text that will take you to Google</a>
 </textarea>
 </div>
@@ -388,7 +401,7 @@
 	<h2>Images on Pages</h2>
 	<h3>img</h3>
 	<p>This tag is used to include an image on an HTML page.</p>
-	 <p><b>Note!</b> This is a special void element that does not have an end tag. This element looks like..</p>
+	 <p><b class="notice">Note!</b> This is a special void element that does not have an end tag. This element looks like..</p>
 	<ul>
 		<li><b>Link to the image</b> using html attributes, use the "src" attribute to specify the image to be displayed</li>
 	</ul>
@@ -400,17 +413,18 @@
 </section>
 <section class="slide">
     <h2>Let's Add More About Ourselves!</h2>
-	<p>Go find some URL's of your social sites and images of yourself and put them in your Biography page</p>
+	
     <table width="100%">
     <tr>
-    <td width="48%">
+    <td width="30%">
+	<p>Go find some URL's of your social sites and images of yourself and put them in your bio page</p>
 		<ul>
 	 		<li>An Image of yourself</li>
 	 		<li>Links to their social sites</li>
 	</ul>
 </td>
 <td width="2%"></td>
-<td width="50%">
+<td width="68%">
 	<div class="workspace">
 	<textarea id="code4" persist="true" name="code4" class="code"  live="true"  mode="text/html" style="display: none;"></textarea>
 	</div>
@@ -495,7 +509,7 @@ p {}
 </style></textarea>
 </div>
 <div class="slide">
-<p><b>Notice!</b> new HTML element <u>style</u>. With this element we specify CSS on a HTML page.</p>
+<p><b class="notice">Notice!</b> new HTML element <u>style</u>. With this element we specify CSS on a HTML page.</p>
 <p><b>CSS</b> has a standard format starting with a selector of HTML elements then curly brackets wrapped around look and feel specification for those elements. These are called <b>CSS Rules</b>. You can have several rules in a CSS document.</p>
 </div>
 </section>
@@ -555,7 +569,7 @@ p#choose {}
 <h2>Pop Quiz</h2>
 <table width="793px">
 <tr>
-<td width="48%">
+<td width="283px">
 <p><b>How do you select different parts of the following HTML Page?</b></p>
 <ol>
 <li class="slide">All paragraphs</li>
@@ -564,9 +578,9 @@ p#choose {}
 <li class="slide">Specifically the element with id <b>message</b></li>
 </ol>
 </td>
-<td width="2%"></td>
-<td width="50%">
-	<div class="preview">
+<td width="10px"></td>
+<td width="500px">
+	<div class="preview" style="width:500px;">
 	<textarea mode="text/html" class="code"  live="true"  style="display: none;" readOnly="true"><html>
 <head>
 <title>Shan Naziripour</title>
@@ -604,13 +618,17 @@ p {
 <h2>A Splash of Colour</h2>
 <h3>color</h3>
 <p>The <b>color</b> property specifies the text colour for the HTML elements</p>
+<div class="slide">
 <p>The values for the <b>color</b> property can be colour name like..</p>
+<div style="background:black;">
 <ul>
 	<li class="slide" style="color:red;">red</li>
 	<li class="slide" style="color:blue;">blue</li>
 	<li class="slide" style="color:PeachPuff;" >PeachPuff</li>
 	<li class="slide" style="color:PapayaWhip;">PapayaWhip</li>
 </ul>
+</div>
+</div>
 <div class="slide">
 <h3>background</h3>
 <p>The <b>background</b> property specifies the background colour for the HTML elements. </p>
@@ -624,7 +642,7 @@ p {
 <p>Pixels is a unit of measurement relative to your screen. This unit is commonly use in web design.</p>
 <p>Look below to see boxes in incrementing pixel sizes using the <b>width</b> and <b>height</b> css properties which take a unit of measurement as their value.</p>
 <div class="preview">
-<textarea class="code"  live="true"  mode="text/html" style="display: none;" readOnly="true"><style>
+<textarea class="code"  live="true"  mode="text/html" style="display: none;"><style>
 div.one {width: 1px; height:1px; background:red;} 
 div.two {width: 3px; height:3px; background:blue;} 
 div.three {width: 5px; height:5px; background:yellow;} 
@@ -636,22 +654,26 @@ div.five {width: 100px; height:100px; background:orange;}
 </section>
 <section class="slide">
 <h2>Spacing</h2>
-<img style="float:right;" src="img/css-margin-padding.gif" />
+<img style="float:right;height:160px;" src="img/css-margin-padding.gif"  />
 <p><b>margin</b> is a property to specify the spacing around the HTML element.</p>
 <p>While, <b>padding</b> is a property to specify the spacing of the text inside the HTML element.</p>
-<p>Both of these properties take a unit of measurement as the value. These properties can also take a list of units to specify specific padding and margins for the different sides of the element in the following order : first top, right, bottom, then left separated by spaced</p>
+<p>Both of these properties take a unit of measurement as the value.</p>
 
 <div class="preview slide">
-<textarea class="code"  live="true"  mode="text/html" style="display: none;" readOnly="true"><style>
+<textarea class="code"  live="true"  mode="text/html" style="display: none;"><style>
 p.one { margin: 10px 5px 2px 5px; padding: 4px; background:red; color:white;}
 p.two { margin:0px; padding:0; background:blue;color:white;}
 </style>
 <p class="one">I'm Paragraph One</p>
-<p class="two">I'm Paragraph Two</p>
-</textarea>
+<p class="two">I'm Paragraph Two</p></textarea>
 </div>
 <div class="slide">
-<p><b>Note!</b> Some elements like <b>p</b>, <b>h1</b> already have margins and padding from the browser.</p>
+	<div class="snippet">margin : (<b>top</b>) (<b>right</b>) (<b>bottom</b>) (<b>left</b>); <br/>
+		padding: (<b>All Sides</b>);
+		</div>
+</div>
+<div class="slide">
+<p><b class="notice">Note!</b> Some elements like <b>p</b>, <b>h1</b> already have margins and padding from the browser.</p>
 </div>
 </section>
 
@@ -688,7 +710,7 @@ p.two { margin:0px; padding:0; background:blue;color:white;}
 <section class="slide">
 <h2>Box Shadow</h2>
 <div class="preview">
-<textarea class="code" mode="text/html" style="display: none;" readOnly="true" live="true"><style>
+<textarea class="code" mode="text/html" style="display: none;" live="true"><style>
 div {
 	box-shadow: 1px 2px 10px gray; 
 	}
@@ -697,13 +719,13 @@ div {
 </textarea>
 </div>
 <div class="slide">
-<p>box-shadow: (<b>horizontal offset of the shadow</b>) (<b>vertical offset</b>) (<b>blur</b>)  (<b>color</b>);</p>
+<div class="snippet">box-shadow: (<b>horizontal offset of the shadow</b>) (<b>vertical offset</b>) (<b>blur</b>)  (<b>color</b>);</div>
 </div>
 </section>
 <section class="slide">
 <h2>Text Shadow</h2>
 <div class="preview">
-<textarea class="code" mode="text/html" style="display: none;" readOnly="true" live="true"><style>
+<textarea class="code" mode="text/html" style="display: none;" live="true"><style>
 h1 {
 	text-shadow:1px 5px 10px green;
 }
@@ -711,7 +733,7 @@ h1 {
 <h1>Do I Look More Pretty?</h1></textarea>
 </div>
 <div class="slide">
-<p>text-shadow: (<b>h-shadow</b>) (<b>v-shadow</b>) (<b>blur</b>) (<b>color</b>);</p>
+<div class="snippet">text-shadow: (<b>h-shadow</b>) (<b>v-shadow</b>) (<b>blur</b>) (<b>color</b>);</div>
 </div>
 </section>
 <section class="slide">
@@ -735,23 +757,25 @@ h1 {
 <p>Using the <b>:hover</b> CSS selector - specify a style for an HTML element that you are currently hovering with the mouse.</p>
 <p>On top of that with CSS3 <b>transition</b> property the HTML element will tween when any change to the style of the element happens.</p>
 <div class="preview slide">
-<textarea class="code"  live="true"  mode="text/html" style="display: none;" readOnly="true"><style>
+<textarea class="code"  live="true"  mode="text/html" style="display: none;"><style>
 div { 
 	background:red; padding:10px; 
-	-webkit-transition: all 0.3s ease-out 
+	-webkit-transition: all 0.3s ease-out; 
+	-moz-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out; 
 }
 div:hover { background:blue; }
 </style>
 <div>Hover Over Me!</div></textarea>
 </div>
 <div class="slide">
-	<p>transition:(<b>the property to transition</b>) (<b>duration</b>) (<b>easing method of the transition</b>);</p>
+	<div class="snippet">transition:(<b>the property to transition</b>) (<b>duration</b>) (<b>easing method of the transition</b>);</div>
 </div>
 </section>
 <section class="slide">
 <h2>Rotate</h2>
 <div class="preview slide">
-<textarea class="code" mode="text/html" style="display: none;" live="true" readOnly="true"><style>
+<textarea class="code" mode="text/html" style="display: none;" live="true" ><style>
 img { -webkit-transition:all 0.3s ease-out; }
 img:hover { -webkit-transform: rotate(180deg); }
 </style>
@@ -773,7 +797,9 @@ img:hover { -webkit-transform: rotate(180deg); }
 </section>
 <section class="slide">
     <!-- Questionnaire for the current level of knowledge -->
+<div class="questionaire">
     <iframe src="https://docs.google.com/spreadsheet/viewform?formkey=dDdtblhjRUNhUGsySWRsbjVfc3hlckE6MA#gid=0" width="100%" height="600px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+</div>
 </section>
     
 	
