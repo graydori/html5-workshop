@@ -173,7 +173,7 @@
     <div style="float:left;width:50%;">
     <img src="img/Shan.jpg" width="150px" style="float:left;margin:0 10px;" />
     <h3>Shan Naziripour</h3>
-    <p>Deveopler at Vancouver Startup working on social networking and educational technologies</p>
+    <p>Developer at Vancouver Startup working on educational and social bookmarking technologies</p>
     </div>
     <div style="clear:both;text-align:center;position:relative;">
 	<img src="img/help.jpg" width="500px" />
@@ -217,7 +217,7 @@
 	<li class="slide">Do you have a personal web page or blog?</li>
     <li class="slide">Have you created any web content to share? (if you said no, think about what means having a Facebook account) </li>
     <li class="slide">Have you used Google lately?</li>
-	<li class="slide">Do you have a favorite magazine, and you visit it frequently online? </li>
+	<li class="slide">Do you have a favourite magazine, and do you visit it frequently online? </li>
     </ul>
 	
 	<div class="slide">
@@ -226,7 +226,7 @@
 	</div>
 	
 	<div class="slide">
-		<p> <b>Think about this:</b> not just CS and Engineering fields require the mastering of programming and HTMl. These days Design, Art, Communications, and many other fields count on you knowing about it! </p> 
+		<p> <b>Think about this:</b> not just CS and Engineering fields require the mastering of programming and HTML. These days Design, Art, Communications, and many other fields count on you knowing about it! </p> 
 	</div>
 
 	
@@ -236,13 +236,13 @@
 	<h2>HTML: HyperText Markup Language</h2>    
     <div class="slide">
 		<h4>What does it mean?</h4> 
-    <p>It's basically a language to describe (or markup) text. How do you thing your browser knows how to layout things on a page? Or how does it know what is bold, what is the title, the paragraphs?</p>
+    <p>It's basically a language to describe (or markup) text. How do you think your browser knows how to layout things on a page? Or how does it know what is bold, what is the title, the paragraphs?</p>
 	</div>
 	
 	<div class="slide">
     <p><b>For example</b> To describe something as a paragraph with HTML you would wrap it in a beginning &nlt;p&ngt; and ending &nlt;/p&ngt;.
 	 Like so.. </p>
-    <div class="slide preview"><textarea class="code" mode="text/html" style="display: none;" readOnly="true"><p>
+    <div class="slide preview"><textarea class="code" live="true" mode="text/html" style="display: none;" ><p>
     This is a paragraph
 </p></textarea></div>
 	</div>
@@ -261,7 +261,7 @@
     <h2>What makes up a HTML document or Web page?</h2>
     <table width="100%" border="0" style="table-layout:fixed;">
     <tr><td>
-<div class="preview"><textarea class="code" readOnly="true" mode="text/html" style="display: none;"><html>
+<div class="preview"><textarea class="code" live="true" mode="text/html" style="display: none;"><html>
 	<head>
 	    <title>Title of the Document</title>
 	</head>
@@ -303,7 +303,6 @@
     <img src="http://farm3.staticflickr.com/2722/4267017325_e3356aabf2_n.jpg" height="170px" style="float:right;margin:10px;"/>
     <h2>Let's Start!</h2>
     <p> Your mission, should you accept it is - <b>To make start your own bio page that says your name.</b></p>
-    <p>Fill in the area on the left below.</p>
     <div style="clear:both" ></div>
 	<div class="workspace">
 	<textarea id="code0" persist="true" name="code0" class="code"  live="true"  mode="text/html" style="display: none;"></textarea>
@@ -339,7 +338,7 @@
 			<li>You Name as the top heading</li>
 			<li>Your School as the second heading</li>
 	 		<li>2 Paragraphs about yourself</li>
-	 		<li>Your Favorite quote</li>
+	 		<li>Your Favourite quote</li>
 	</ul>
 </td>
 <td width="2%"></td>
@@ -381,7 +380,7 @@
 	</ul>
 <div class="preview">
 <textarea class="code"  live="true"  mode="text/html" style="display: none;" readOnly="true"> 
-<a href="http://www.blah.com" >Text that will take you to www.blah.com</a>
+<a href="http://www.google.com" >Text that will take you to Google</a>
 </textarea>
 </div>
 </section>
@@ -794,7 +793,7 @@ img:hover { -webkit-transform: rotate(180deg); }
 		<!--
         <a href="#" class="deck-remote-ignore-link">Ignore</a>
         | -->
-        <a href="#" class="deck-remote-join-link">Join</a>
+        <a href="#" class="deck-remote-join-link" onclick="$.deck( 'getOptions' ).keys = {};$('.deck-next-link ,.deck-prev-link').css({left:'-999999px',top:'-999999px'});alert('Navigation Disabled');">Join</a>
     </p>
 	</div>
 </div>

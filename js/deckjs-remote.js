@@ -64,6 +64,7 @@
 
 		showMessage: function(message) {
 			this.hideMessages();
+			$('.deck-remote-message-content').show();
 			message.css({
 				visibility: 'visible',
 				top: 0
@@ -89,12 +90,13 @@
 		},
 
 		hideMessages: function(){
+			$('.deck-remote-message-content').hide();
 			this.joinMessage
 				.add(this.leaveMessage)
 				.add(this.masterMessage)
 				.each(function(){
 					$(this).css('top', -$(this).outerHeight() - 40);
-				});
+				});		
 		}
 	};
 
